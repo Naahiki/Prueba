@@ -1,49 +1,24 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-  const cameraPermissionGranted = localStorage.getItem("cameraPermissionGranted");
+  const videoElements = [
+      { id: "cameraFeed1", storageKey: "capturedImage" },
+      { id: "cameraFeed3", storageKey: "capturedImage1" },
+      { id: "cameraFeed5", storageKey: "capturedImage3" }
+  ];
 
-  if (cameraPermissionGranted) {
-      const videoElement = document.getElementById("cameraFeed1");
-      navigator.mediaDevices.getUserMedia({ video: true })
-          .then(function (stream) {
-              videoElement.srcObject = stream;
-          })
-          .catch(function (error) {
-              console.error("Error al acceder a la cámara:", error);
-          });
-  }
-});
+  videoElements.forEach(({ id, storageKey }) => {
+      const cameraPermissionGranted = localStorage.getItem("cameraPermissionGranted");
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    const cameraPermissionGranted = localStorage.getItem("cameraPermissionGranted");
-
-    if (cameraPermissionGranted) {
-        const videoElement = document.getElementById("cameraFeed3");
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function (stream) {
-                videoElement.srcObject = stream;
-            })
-            .catch(function (error) {
-                console.error("Error al acceder a la cámara:", error);
-            });
-    }
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const cameraPermissionGranted = localStorage.getItem("cameraPermissionGranted");
-
-    if (cameraPermissionGranted) {
-        const videoElement = document.getElementById("cameraFeed5");
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function (stream) {
-                videoElement.srcObject = stream;
-            })
-            .catch(function (error) {
-                console.error("Error al acceder a la cámara:", error);
-            });
-    }
+      if (cameraPermissionGranted) {
+          const videoElement = document.getElementById(id);
+          navigator.mediaDevices.getUserMedia({ video: true })
+              .then(function (stream) {
+                  videoElement.srcObject = stream;
+              })
+              .catch(function (error) {
+                  console.error("Error al acceder a la cámara:", error);
+              });
+      }
+  });
 });
 
 
