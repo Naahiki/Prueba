@@ -1,0 +1,164 @@
+.camera {
+    width: 100%; /* Ajustar al 100% del contenedor */
+    height: 100%; /* Ajustar al 100% del contenedor */
+    position: absolute; /* Posicionamiento absoluto dentro del contenedor */
+    top: 0;
+    left: 0;
+}
+
+
+#cameraFeed1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1); 
+}
+
+
+#cameraFeed3 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1); 
+}
+
+
+
+#cameraFeed5 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transform: scaleX(-1); 
+    filter: grayscale(100%) contrast(150%) brightness(80%) sepia(10%);    
+}
+
+
+
+
+
+#cameraContainer1 video {
+    margin: 0;
+}
+
+
+
+
+#cameraContainer1 {
+    position: absolute;
+    z-index: 1;
+    width: 352px;
+    height: 570px;
+    border-radius: 176px;
+    overflow: hidden;
+}
+
+
+#cameraContainer2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/* Asegura que el video cubra completamente el contenedor manteniendo la relación de aspecto */
+    transform: scaleX(-1); 
+    border-radius: 176px;
+
+
+}
+
+#cameraContainer3 {
+    position: absolute;
+    z-index: 1;
+    width: 352px;
+    height: 570px;
+
+    border-radius: 176px;
+    overflow: hidden;
+}
+
+#cameraContainer4 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/* Asegura que el video cubra completamente el contenedor manteniendo la relación de aspecto */
+    transform: scaleX(-1); 
+    border-radius: 176px;
+
+
+}
+
+#cameraContainer5 {
+    position: absolute;
+    z-index: 1;
+    width: 352px;
+    height: 570px;
+
+    border-radius: 176px;
+    overflow: hidden;
+}
+
+#cameraContainer6 {
+    position: absolute;
+    z-index: 1;
+    width: 352px;
+    height: 570px;
+
+    border-radius: 176px;
+    overflow: hidden;
+}
+
+.results-image-container{
+    position: relative;
+    height: 570px;
+    width: 355px;
+}
+
+
+#cameraContainerResults img {
+    width: 100%;
+    height: 100%;
+    border-radius: 176px;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+.captured-image-container {
+    width: 352px;
+    height: 570px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+#capturedImage2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 176px;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+#capturedImage3 {
+    width: 100%;
+    height: 100%;
+    border-radius: 176px;
+    object-fit: cover;
+    transform: scaleX(-1);
+    filter: grayscale(100%) contrast(150%) brightness(80%) sepia(10%);    
+}
+
+#capturedImage4 {
+    width: 100%;
+    height: 100%;
+    border-radius: 176px;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+#resultrectangles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 352px;
+    height: 570px;
+    pointer-events: none;
+}
+
