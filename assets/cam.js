@@ -1,25 +1,55 @@
+function iniciarCamara(containerId, videoId) {
+  const container = document.getElementById(containerId);
+  const videoElement = document.createElement('video');
+  videoElement.setAttribute('id', videoId);
+  videoElement.setAttribute('autoplay', true);
+  container.appendChild(videoElement);
+
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      videoElement.srcObject = stream;
+    })
+    .catch(function (error) {
+      console.error("Error al acceder a la cámara:", error);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-  const videoElements = [
-      { id: "cameraFeed1", storageKey: "capturedImage" },
-      { id: "cameraFeed3", storageKey: "capturedImage1" },
-      { id: "cameraFeed5", storageKey: "capturedImage3" }
-  ];
+  const page5 = document.querySelector('.page-5');
 
-  videoElements.forEach(({ id, storageKey }) => {
-      const cameraPermissionGranted = localStorage.getItem("cameraPermissionGranted");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Página visible, solicitar permiso para acceder a la cámara
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function (stream) {
+            // Permisos otorgados, almacenar esta información en el localStorage
+            localStorage.setItem("cameraPermissionGranted", true);
 
-      if (cameraPermissionGranted) {
-          const videoElement = document.getElementById(id);
-          navigator.mediaDevices.getUserMedia({ video: true })
-              .then(function (stream) {
-                  videoElement.srcObject = stream;
-              })
-              .catch(function (error) {
-                  console.error("Error al acceder a la cámara:", error);
-              });
+            // Iniciar las cámaras en los contenedores correspondientes
+            iniciarCamara('cameraContainer1', 'cameraFeed1');
+            iniciarCamara('cameraContainer3', 'cameraFeed3');
+            iniciarCamara('cameraContainer5', 'cameraFeed5');
+          })
+          .catch(function (error) {
+            // Permisos denegados, manejar este caso
+            localStorage.setItem("cameraPermissionGranted", false);
+            console.error("El usuario denegó el acceso a la cámara:", error);
+
+            // Aquí puedes mostrar un mensaje al usuario o realizar otra acción apropiada
+          });
       }
+    });
   });
+
+  observer.observe(page5);
 });
+
+
+
+
+
+
 
 
 function acceptAccess() {
@@ -68,7 +98,7 @@ function rejectAccess() {
     const capturedImage = canvas.toDataURL('image/png');
 
     // Oculta la página actual
-    const currentPage = document.querySelector('.page-6');
+    const currentPage = document.querySelector('.page-5');
     currentPage.style.display = 'none';
 
     // Asigna la imagen capturada al div oculto
@@ -83,7 +113,7 @@ function rejectAccess() {
     localStorage.setItem('capturedImage', capturedImage);
 
     // Muestra la siguiente página
-    const nextPage = document.querySelector('.page-7');
+    const nextPage = document.querySelector('.page-6');
     nextPage.style.display = 'block';
 }
 
@@ -110,11 +140,11 @@ function rejectAccess() {
       capturedImageContainer.innerHTML = `<img src="${capturedImage1}" alt="Captured Image">`;
     
       // Oculta la página actual
-      const currentPage2 = document.querySelector('.page-10');
+      const currentPage2 = document.querySelector('.page-9');
       currentPage2.style.display = 'none';
     
       // Muestra la siguiente página
-      const nextPage2 = document.querySelector('.page-11');
+      const nextPage2 = document.querySelector('.page-10');
       nextPage2.style.display = 'block';
     }
     
@@ -129,7 +159,7 @@ function rejectAccess() {
         capturedImageContainer.innerHTML = `<img src="${imageData1}" alt="Captured Image">`;
       } else {
         // Si no hay imagen almacenada, asegúrate de ocultar la página 11
-        const nextPage2 = document.querySelector('.page-11');
+        const nextPage2 = document.querySelector('.page-10');
         nextPage2.style.display = 'none';
       }
     });
@@ -157,11 +187,11 @@ function rejectAccess() {
     capturedImageElement.src = capturedImage3;
 
     // Redirige a la siguiente página
-    const currentPage3 = document.querySelector('.page-14');
+    const currentPage3 = document.querySelector('.page-13');
     currentPage3.style.display = 'none';
 
     // Muestra la siguiente página
-    const nextPage3 = document.querySelector('.page-15');
+    const nextPage3 = document.querySelector('.page-14');
     nextPage3.style.display = 'block';
 }
 

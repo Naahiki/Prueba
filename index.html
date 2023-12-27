@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <title>BOXSR | Rutina para hombres</title>
 
 
@@ -14,15 +14,16 @@
 
     <link rel="stylesheet" href="assets/styles/header.css">
     <link rel="stylesheet" href="assets/styles/common.css">
-    <link rel="stylesheet" href="assets/styles/skinType.css">
     <link rel="stylesheet" href="assets/styles/cam.css">
-    <link rel="stylesheet" href="assets/styles/skinAge.css">
-    <link rel="stylesheet" href="assets/styles/solarDamage.css">
+    <!-- <link rel="stylesheet" href="assets/styles/media.css"> -->
+    <link rel="stylesheet" href="assets/styles/medias2.css">
+    <!-- <link rel="stylesheet" href="assets/styles/medias3.css"> -->
 
 
 
     <script src="assets/script.js"></script>
     <script src="assets/cam.js"></script>
+
 
 
 </head>
@@ -174,8 +175,8 @@
                                 <input style="border: 1px solid rgba(87, 60, 65, 1); box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;" class="required-input" type="text" id="birthdayInput" name="input-text" placeholder="DD/MM/YYYY" required>
                             </form>
                         </div>
-                    </div>
-                    <div class="iconos-last-next" >
+                    
+                        <div class="iconos-last-next" style="margin-left: -20px;" >
                         <div class="last-page">
                             <a href="#" onclick="showPreviousPage(3);">
                                 <i class="fa-solid fa-arrow-left"></i>
@@ -187,6 +188,7 @@
                             </a>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -227,75 +229,8 @@
                 </div>
             </div>
         </div>
+
         <div class="page-5" style="display: none;">
-            <div class="common-body">
-                <div class="common-body-wrapper-content">
-                    <div class="common-three-column-part">
-                    
-                        <div class="skyn-type" style=" border: 1px solid #dbf22e;
-                        background-color: #dbf22e;"><p class="three-column-text">SKIN TYPE</p></div>
-                        <div class="skyn-age"><p class="three-column-text">SKIN AGE</p></div>
-                        <div class="solar-damage"><p class="three-column-text">SOLAR DAMAGE</p></div>
-                    </div>
-                    <div class="common-text-input-part">
-                        <div class="common-wrapper-content-question">
-                            <h2 class="question"> <strong>How do you feel <br></strong> about your face?</h2>
-                        </div>
-                        <div class="skin-types-images">
-                            <div class="skin-types-images-top-row">
-                                <div class="skin-types-image-container">
-                                    <img src="../../images/pages/iconos test de piel-01 1.svg" alt="Imagen 1" class="svg-image">
-                                    <p class="image-text"><strong>I have an oily T-zone </strong>(forehead, nose, chin)</p>
-                                </div>
-                                <div class="skin-types-image-container">
-                                    <img src="../../images/pages/iconos test de piel-01 2.svg" alt="Imagen 2" class="svg-image" >
-                                    <p class="image-text"><strong>My whole face feels oily</strong></p>
-                                </div>
-                                <div class="skin-types-image-container" >
-                                    <img src="../../images/pages/iconos test de piel-01 3.svg" alt="Imagen 3" class="svg-image" >
-                                    <p class="image-text"><strong>My face feels dry and flaky</strong></p>
-                                </div>
-                            </div>
-                            <div class="skin-types-images-bottom-row">
-                                <div class="skin-types-image-container">
-                                    <img src="../../images/pages/iconos test de piel-01 4.svg" alt="Imagen 4" class="svg-image" >
-                                    <p class="image-text"><strong>My skin gets irritated easily </strong>(with reddened areas)</p>
-                                </div>
-                                <div class="skin-types-image-container" >
-                                    <img src="../../images/pages/iconos test de piel-01 5.svg" alt="Imagen 5" class="svg-image" >
-                                    <p class="image-text"><strong>My skin feels neutral</strong> (not oily or dry)</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="iconos-last-next">
-                        <div class="last-page">
-                            <a href="#" onclick="showPreviousPage(5)">
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </a>
-                        </div>
-                        <div class="next-page" id="nextButton3" >
-                            <a href="#">
-                                <i class="fa-sharp fa-solid fa-check"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div id="customAlert" class="custom-alert">
-                        <div class="close-btn" onclick="closeCustomAlert1()">x</div>
-                        <div class="custom-alert-content" >
-                            <p> <strong>Oops!</strong></p>
-                          <p style="width: 339px;
-                          height: 77px;
-                          margin-top: -40px;
-                          margin-left: 120px;
-                          "> It seems like you forgot to select one of the options </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="page-6" style="display: none;">
             <div id="blurBackground" class="blur-background"></div>
 
             <div class="common-body">
@@ -311,10 +246,10 @@
                       </div>
     
                     <div class="common-three-column-part">
-                        <div class="skyn-type"style=" border: 1px solid #dbf22e;
+                        <div class="skyn-type" id="skin-type-mobile0"   style=" border: 1px solid #dbf22e;
                         background-color: #dbf22e;"><p class="three-column-text">SKIN TYPE</p></div>
-                        <div class="skyn-age"><p class="three-column-text">SKIN AGE</p></div>
-                        <div class="solar-damage"><p class="three-column-text">SOLAR DAMAGE</p></div>
+                        <div class="skyn-age" id="skin-age-mobile0"><p class="three-column-text" id="skin-age-mobile-text0">SKIN AGE</p></div>
+                        <div class="solar-damage" id="solar-damage-mobile0"><p class="three-column-text" id="solar-damage-mobile-text0">SOLAR DAMAGE</p></div>
                     </div>
                     <div class="scanner-text-input-part">
                         <div class="skin-scanner-left-column" style="width: 280px;">
@@ -322,28 +257,15 @@
                         </div>
                         <div class="skin-scanner-center-column">
                             <div class="emoji" >
-                                <img src="../../images/emoticonos/Emoticonos-03.png" alt="emoji" style="position: absolute;
-                                width: 200px;
-                                margin-left: 200px;
-                                z-index: 2;
-                                margin-top: -60px;">
-                                <p style="
-                                position: absolute;
-                                z-index: 2;
-                                margin-left: 355px; margin-top: 25px;
-                                 font-family: 'Sofia Sans', sans-serif;
-                                font-size: 18px;
-                                font-weight: 400;
-                                line-height: 20px;
-                                letter-spacing: 0em;
-                                text-align: left;"> NEUTRAL EXPRESION</p>
+                                <img src="../../images/emoticonos/Emoticonos-03.png" alt="emoji" >
+                                <p > NEUTRAL EXPRESION</p>
     
                                 
                             </div>
                             <div class="skin-scanner-image-container">
                                 <div class="bottom-image">
                                     <div class="camera" id="cameraContainer1">
-                                        <video id="cameraFeed1" autoplay></video>
+                                        
                                     </div>
                                 </div>
                                 <div class="top-image">
@@ -357,11 +279,11 @@
                             <div class="steps-text">
                                 <div class="step">
                                     <p style="width:38px;height: 38px;font-size: 18px;font-family: 'Sofia Sans', sans-serif;color:white; background-color: black;border-radius: 50%;font-weight: 700; margin-top:20px; margin-right: 20px; ">1</p>
-                                    <h3 class="question" style="font-size: 18px;font-family: 'Sofia Sans', sans-serif;font-weight: 400;width: 255px; height: 99px; "> <strong style="font-size: 18px;">First, </strong>center the tip of your nose on the central point where the two lines meet.</h3>
+                                    <h3 class="scanner-text"> <strong style="font-size: 18px;">First, </strong>center the tip of your nose on the central point where the two lines meet.</h3>
                                 </div>
                                 <div class="step">
                                     <p style="width:38px;height: 38px;font-size: 18px;font-family: 'Sofia Sans', sans-serif;color:white; background-color: black;border-radius: 50%;font-weight: 700; margin-top:20px; margin-right: 20px; ">2</p>
-                                    <h3 class="question" style="font-size: 18px;font-family: 'Sofia Sans', sans-serif;font-weight: 400; width: 255px; height: 99px;"> <strong style="font-size: 18px;">Second, </strong>keep fringes and other parts of your hair or accessories that block your face out of the way. Try to capture a clear view of your skin on camera.</h3>
+                                    <h3 class="scanner-text"> <strong style="font-size: 18px;">Second, </strong>keep fringes and other parts of your hair or accessories that block your face out of the way. Try to capture a clear view of your skin on camera.</h3>
                                 </div>
                             </div>
                         </div>
@@ -382,17 +304,17 @@
                 
             </div>
         </div>
-        <div class="page-7" style="display: none;">
+        <div class="page-6" style="display: none;">
             <div class="common-body">
                 <div class="common-body-wrapper-content">
                     <div class="common-three-column-part">
-                        <div class="skyn-type" style=" border: 1px solid #dbf22e;
+                        <div class="skyn-type" id="skin-type-mobile1"   style=" border: 1px solid #dbf22e;
                         background-color: #dbf22e;"><p class="three-column-text">SKIN TYPE</p></div>
-                        <div class="skyn-age"><p class="three-column-text">SKIN AGE</p></div>
-                        <div class="solar-damage"><p class="three-column-text">SOLAR DAMAGE</p></div>
+                        <div class="skyn-age" id="skin-age-mobile1"><p class="three-column-text" id="skin-age-mobile-text1">SKIN AGE</p></div>
+                        <div class="solar-damage" id="solar-damage-mobile1"><p class="three-column-text" id="solar-damage-mobile-text1">SOLAR DAMAGE</p></div>
                     </div>
                     <div class="scanner-text-input-part">
-                        <div class="skin-scanner-left-column">
+                        <div class="skin-scanner-left-column-mobile">
                             <h2 class="question"><strong>We`re analyzing your skin type!</strong></h2><br>
                             <div class="circle-container">
                                 <svg class="circle" width="200" height="200" viewBox="0 0 100 100">
@@ -404,7 +326,7 @@
                             
                              
                         </div>
-                        <div class="skin-scanner-center-column">
+                        <div class="skin-scanner-center-column" id="mobile-version">
                             <div class="skin-scanner-image-container">
     
                                 <div class="scanner-trans-bottom-image">
@@ -435,7 +357,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="skin-scanner-right-column">
+                            <div class="skin-scanner-right-column-mobile">
                                 <div class="skin-scanner-rigth-column-text" style="padding: 40px;
                                 width: 235px;">
                                     <h2 class="question">Did you know that <strong> men's skin is 24% thicker</strong> than women's skin?</h2>
@@ -445,25 +367,92 @@
                     </div>
                 </div>
     
+            </div>
         </div>
+
+
+        <div class="page-7" style="display: none;">
+            <div class="common-body">
+                <div class="common-body-wrapper-content">
+                    <div class="common-three-column-part">
+                        <div class="skyn-type" id="skin-type-mobile2"   style=" border: 1px solid #dbf22e;
+                        background-color: #dbf22e;"><p class="three-column-text">SKIN TYPE</p></div>
+                        <div class="skyn-age" id="skin-age-mobile2"><p class="three-column-text" id="skin-age-mobile-text2">SKIN AGE</p></div>
+                        <div class="solar-damage" id="solar-damage-mobile2"><p class="three-column-text" id="solar-damage-mobile-text2">SOLAR DAMAGE</p></div>
+                    </div>
+                    <div class="common-text-input-part">
+                        <div class="common-wrapper-content-question" id="question-mobile">
+                            <h2 class="question" > <strong>How do you feel <br></strong> about your face?</h2>
+                        </div>
+                        <div class="skin-types-images">
+                            <div class="skin-types-images-top-row">
+                                <div class="skin-types-image-container">
+                                    <img src="../../images/pages/iconos test de piel-01 1.svg" alt="Imagen 1" class="svg-image">
+                                    <p class="image-text"><strong>I have an oily T-zone </strong>(forehead, nose, chin)</p>
+                                </div>
+                                <div class="skin-types-image-container">
+                                    <img src="../../images/pages/iconos test de piel-01 2.svg" alt="Imagen 2" class="svg-image" >
+                                    <p class="image-text"><strong>My whole face feels oily</strong></p>
+                                </div>
+                                <div class="skin-types-image-container" >
+                                    <img src="../../images/pages/iconos test de piel-01 3.svg" alt="Imagen 3" class="svg-image" >
+                                    <p class="image-text"><strong>My face feels dry and flaky</strong></p>
+                                </div>
+                            </div>
+                            <div class="skin-types-images-bottom-row">
+                                <div class="skin-types-image-container">
+                                    <img src="../../images/pages/iconos test de piel-01 4.svg" alt="Imagen 4" class="svg-image" >
+                                    <p class="image-text"><strong>My skin gets irritated easily </strong>(with reddened areas)</p>
+                                </div>
+                                <div class="skin-types-image-container" >
+                                    <img src="../../images/pages/iconos test de piel-01 5.svg" alt="Imagen 5" class="svg-image" >
+                                    <p class="image-text"><strong>My skin feels neutral</strong> (not oily or dry)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="iconos-last-next" >
+                        <div class="last-page">
+                            <a href="#" onclick="showPreviousPage(5)">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </a>
+                        </div>
+                        <div class="next-page" id="nextButton3" >
+                            <a href="#">
+                                <i class="fa-sharp fa-solid fa-check"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="customAlert" class="custom-alert">
+                        <div class="close-btn" onclick="closeCustomAlert1()">x</div>
+                        <div class="custom-alert-content" >
+                            <p> <strong>Oops!</strong></p>
+                          <p> It seems like you forgot to select one of the options </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
         <div class="page-8" style="display: none;">
             <div class="common-body">
                 <div class="common-body-wrapper-content">
                       <div class="common-text-input-part">
-                          <div class="common-wrapper-content-question" style="width: 240px; position: absolute; top:50px; left: 50px;">
+                          <div class="done-common-wrapper-content-question">
                               <h2 class="question" style="margin-left:50px;"><strong>DONE!</strong> You’re doing great!</h2>
                           </div>
                       </div>
       
-                      <div class="done-pages-big-icon" style="position: absolute;">
-                          <a>
-                              <svg  width="414" height="414" viewBox="0 0 314 314" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M157 266.9C217.696 266.9 266.9 217.696 266.9 157C266.9 96.304 217.696 47.1001 157 47.1001C96.3039 47.1001 47.1 96.304 47.1 157C47.1 217.696 96.3039 266.9 157 266.9ZM157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6267 7.8501 7.85001 74.6268 7.85001 157C7.85001 239.373 74.6267 306.15 157 306.15Z" fill="#573C41"/>
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6267 7.8501 7.85001 74.6268 7.85001 157C7.85001 239.373 74.6267 306.15 157 306.15ZM157 266.945C96.2789 266.945 47.0547 217.721 47.0547 157C47.0547 96.279 96.2789 47.0548 157 47.0548C217.721 47.0548 266.945 96.279 266.945 157C266.945 217.721 217.721 266.945 157 266.945Z" fill="#DBF22E"/>
-                                  <path d="M103.598 158.828L138.513 193.742L216.35 115.906" stroke="#DBF22E" stroke-width="8"/>
-                              </svg>
-                          </a>
+                      <div class="done-pages-big-icon">
+                          
+                            <svg  width="414" height="414" viewBox="0 0 314 314" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M157 266.9C217.696 266.9 266.9 217.696 266.9 157C266.9 96.304 217.696 47.1001 157 47.1001C96.3039 47.1001 47.1 96.304 47.1 157C47.1 217.696 96.3039 266.9 157 266.9ZM157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6267 7.8501 7.85001 74.6268 7.85001 157C7.85001 239.373 74.6267 306.15 157 306.15Z" fill="#573C41"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6267 7.8501 7.85001 74.6268 7.85001 157C7.85001 239.373 74.6267 306.15 157 306.15ZM157 266.945C96.2789 266.945 47.0547 217.721 47.0547 157C47.0547 96.279 96.2789 47.0548 157 47.0548C217.721 47.0548 266.945 96.279 266.945 157C266.945 217.721 217.721 266.945 157 266.945Z" fill="#DBF22E"/>
+                                <path d="M103.598 158.828L138.513 193.742L216.35 115.906" stroke="#DBF22E" stroke-width="8"/>
+                            </svg>
+                          
                       </div>
                   </div>
                 </div>
@@ -471,64 +460,16 @@
         </div>
               
         </div>
+
+
         <div class="page-9" style="display: none;">
             <div class="common-body">
                 <div class="common-body-wrapper-content">
                     <div class="common-three-column-part" >
-                        <div class="skyn-type"><p class="three-column-text">SKIN TYPE</p></div>
-                        <div class="skyn-age" style="border: 1px solid  #47D36F;
+                        <div class="skyn-type" id="skin-type-mobile3"><p class="three-column-text" id="skin-type-mobile-text3">SKIN TYPE</p></div>
+                        <div class="skyn-age" id="skin-age-mobile3"    style="border: 1px solid  #47D36F;
                         background-color: #47D36F;"><p class="three-column-text">SKIN AGE</p></div>
-                        <div class="solar-damage"><p class="three-column-text">SOLAR DAMAGE</p></div>
-                    </div>
-                    <div class="skin-text-input-part">
-                        <div class="common-wrapper-content-question" style="margin-right: 100px; margin-left: -60px;">
-                            <h2 class="question" style="width: 290px;"><strong>Have you noticed more visible wrinkles or expression lines lately?</strong></h2>
-                        </div>
-                        <div class="skyn-age-select"> 
-                            <p >Very few or hardly any</p>
-                            <p >Yes! Expression lines only</p>
-                            <p >Yes, and quite deep</p>
-                        </div>
-                        
-                    </div>
-                    <div class="iconos-last-next">
-                        <div class="last-page">
-                            <a href="#" onclick="showPreviousPage(9)">
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </a>
-                        </div>
-                        <div class="next-page"id="nextButton4"> 
-                            <a href="#" >
-                                <i class="fa-sharp fa-solid fa-check"></i>
-                            </a>
-                        </div>
-                    </div>
-    
-                    <div id="customAlert0" class="custom-alert">
-                        <div class="close-btn" onclick="closeCustomAlert2()">x</div>
-                        <div class="custom-alert-content">
-                            <p> <strong>Oops!</strong></p>
-                          <p style="width: 339px;
-                          height: 77px;
-                          margin-top: -40px;
-                          margin-left: 120px;
-                          "> It seems like you forgot to select one of the options </p>
-                        </div>
-                    </div>
-            
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="page-10" style="display: none;">
-            <div class="common-body">
-                <div class="common-body-wrapper-content">
-                    <div class="common-three-column-part" >
-                        <div class="skyn-type"><p class="three-column-text">SKIN TYPE</p></div>
-                        <div class="skyn-age" style="border: 1px solid  #47D36F;
-                        background-color: #47D36F;"><p class="three-column-text">SKIN AGE</p></div>
-                        <div class="solar-damage"><p class="three-column-text">SOLAR DAMAGE</p></div>
+                        <div class="solar-damage" id="solar-damage-mobile3"><p class="three-column-text" id="solar-damage-mobile-text3">SOLAR DAMAGE</p></div>
                     </div>
                     <div class="scanner-text-input-part">
                         <div class="skin-scanner-left-column">
@@ -536,29 +477,16 @@
                         </div>
                         <div class="skin-scanner-center-column">
                             <div class="skin-scanner-image-container">
-                                <div class="emoji" >
-                                    <img src="../../images/emoticonos/Emoticonos-01.png" alt="emoji" style="position: absolute;
-                                    width: 200px;
-                                    margin-left: 200px;
-                                    z-index: 2;
-                                    margin-top: -60px;">
-                                    <p style="
-                                    position: absolute;
-                                    z-index: 1;
-                                    margin-left: 355px; margin-top: 25px;
-                                     font-family: 'Sofia Sans', sans-serif;
-                                    font-size: 18px;
-                                    font-weight: 400;
-                                    line-height: 20px;
-                                    letter-spacing: 0em;
-                                    text-align: left;">SMILE!</p>
+                                <div class="emoji1" >
+                                    <img src="../../images/emoticonos/Emoticonos-01.png" alt="emoji">
+                                    <p>SMILE!</p>
         
                                     
                                 </div>
                                 <div class="skin-scanner-image-container">
                                     <div class="bottom-image">
                                         <div class="camera" id="cameraContainer3">
-                                            <video id="cameraFeed3" autoplay></video>
+                                            
                                         </div>
                                     </div>
                                     <div class="top-image">
@@ -571,11 +499,11 @@
                             <div class="steps-text">
                                 <div class="step">
                                     <p style="width:38px;height: 38px;font-size: 18px;font-family: 'Sofia Sans', sans-serif;color:white; background-color: black;border-radius: 50%;font-weight: 700; margin-top:20px; margin-right: 20px; ">1</p>
-                                    <h3 class="question" style="font-size: 18px;font-family: 'Sofia Sans', sans-serif;font-weight: 400;width: 255px; height: 99px; "> <strong style="font-size: 18px;">First, </strong>center the tip of your nose on the central point where the two lines meet.</h3>
+                                    <h3 class="scanner-text"  > <strong style="font-size: 18px;">First, </strong>center the tip of your nose on the central point where the two lines meet.</h3>
                                 </div>
                                 <div class="step">
                                     <p style="width:38px;height: 38px;font-size: 18px;font-family: 'Sofia Sans', sans-serif;color:white; background-color: black;border-radius: 50%;font-weight: 700; margin-top:20px; margin-right: 20px; ">2</p>
-                                    <h3 class="question" style="font-size: 18px;font-family: 'Sofia Sans', sans-serif;font-weight: 400; width: 255px; height: 99px;"> <strong style="font-size: 18px;">Second, </strong>keep fringes and other parts of your hair or accessories that block your face out of the way. Try to capture a clear view of your skin on camera.</h3>
+                                    <h3 class="scanner-text"> <strong style="font-size: 18px;">Second, </strong>keep fringes and other parts of your hair or accessories that block your face out of the way. Try to capture a clear view of your skin on camera.</h3>
                                 </div>
                             </div>
                         </div>
@@ -598,68 +526,114 @@
         </div>
 
        
-        <div class="page-11" style="display: none;">
+        <div class="page-10" style="display: none;">
             <div class="common-body">
                 <div class="common-body-wrapper-content">
                     <div class="common-three-column-part" >
-                        <div class="skyn-type"><p class="three-column-text">SKIN TYPE</p></div>
-                        <div class="skyn-age" style="border: 1px solid  #47D36F;
+                        <div class="skyn-type" id="skin-type-mobile4"><p class="three-column-text" id="skin-type-mobile-text4">SKIN TYPE</p></div>
+                        <div class="skyn-age" id="skin-age-mobile4"    style="border: 1px solid  #47D36F;
                         background-color: #47D36F;"><p class="three-column-text">SKIN AGE</p></div>
-                        <div class="solar-damage"><p class="three-column-text">SOLAR DAMAGE</p></div>
+                        <div class="solar-damage" id="solar-damage-mobile4"><p class="three-column-text" id="solar-damage-mobile-text4">SOLAR DAMAGE</p></div>
                     </div>
                     <div class="scanner-text-input-part">
-                        <div class="skin-scanner-left-column">
-                            <h2 class="question" style="width: 220px;"><strong>We`re analizing your expression lines!</strong></h2>
-                            <div class="circle-container" id="circle-container0">
+                        <div class="skin-scanner-left-column-mobile">
+                            <h2 class="question"><strong>We`re analizing your expression lines!</strong></h2><br>
+                            <div class="circle-container">
                                 <svg class="circle" width="200" height="200" viewBox="0 0 100 100">
                                     <circle class="progress-ring-circle0"  style="stroke:#47D36F;"    cx="50" cy="50" r="40"></circle>
                                 </svg>
+                            
                                 <div class="percentage" id="percentage0">0%</div>
                             </div>
+                            
+                             
                         </div>
-                        
-    
-    
-                        <div class="skin-scanner-center-column">
+                        <div class="skin-scanner-center-column" id="mobile-version0">
                             <div class="skin-scanner-image-container">
-                                
+        
                                 <div class="scanner-trans-bottom-image">
                                     <div class="scanner-container">
-                                        <div class="camera" id="cameraContainer4">
-                                            <img id="capturedImage2" alt="Captured Image">
-                                        </div>   
+                                        <div class="bottom-image">
+                                            <div class="camera" id="cameraContainer4">
+                                                <img id="capturedImage2" alt="Captured Image">
+                                            </div>
+                                        </div>
                                         
                                     </div>
                                 </div>
                                 <div class="scanner-trans-top-image">
                                     <div class="scanner-container" style="z-index: 5;">
-                                        <svg width="352" height="570" viewBox="0 0 352 570" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect width="352" height="570" rx="176" fill="url(#paint0_linear_9_177)" fill-opacity="0.28"/>
-                                            <defs>
-                                            <linearGradient id="paint0_linear_9_177" x1="176" y1="0" x2="176" y2="570" gradientUnits="userSpaceOnUse">
-                                            <stop stop-color="#47D36F"/>
-                                            <stop offset="1" stop-color="#47D36F" stop-opacity="0.24"/>
-                                            </linearGradient>
-                                            </defs>
+                                        <svg  width="352" height="570" viewBox="0 0 352 570" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="352" height="570" rx="176" fill="url(#paint0_linear_9_104)" fill-opacity="0.28"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_9_104" x1="176" y1="0" x2="176" y2="570" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#47D36F"/>
+                                        <stop offset="1" stop-color="#DBF22E" stop-opacity="0"/>
+                                        </linearGradient>
+                                        </defs>
                                         </svg>
-                                            
                                         <div class="scanner1"></div>
                                         <div class="vertical-line1"></div>
-    
+        
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="skin-scanner-right-column">
-                            <div class="skin-scanner-rigth-column-text" style="padding: 40px;
-                                margin-top: -80px;
+                            <div class="skin-scanner-right-column-mobile">
+                                <div class="skin-scanner-rigth-column-text" style="padding: 20px;margin-top:-100px;
                                 width: 280px;">
-                                <h2 class="question" >The <strong>main cause of premature wrinkles</strong> in men's skin is <strong>sun damage.</strong><br><br> The <strong>best product</strong> to prevent ageing is a <strong>sunscreen.</strong></h2>
+                                    <h2 class="question" >The <strong>main cause of premature wrinkles</strong> in men's skin is <strong>sun damage.</strong><br><br> The <strong>best product</strong> to prevent ageing is a <strong>sunscreen.</strong></h2>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+        
+            </div>
+        </div>
+        <div class="page-11" style="display: none;">
+            <div class="common-body">
+                <div class="common-body-wrapper-content">
+                    <div class="common-three-column-part" >
+                        <div class="skyn-type" id="skin-type-mobile5"><p class="three-column-text" id="skin-type-mobile-text5">SKIN TYPE</p></div>
+                        <div class="skyn-age" id="skin-age-mobile5"    style="border: 1px solid  #47D36F;
+                        background-color: #47D36F;"><p class="three-column-text">SKIN AGE</p></div>
+                        <div class="solar-damage" id="solar-damage-mobile5"><p class="three-column-text" id="solar-damage-mobile-text5">SOLAR DAMAGE</p></div>
+                    </div>
+                    <div class="skin-text-input-part">
+                        <div class="common-wrapper-content-question" id="question-mobile0">
+                            <h2 class="question" style="width: 290px;"><strong>Have you noticed more visible wrinkles or expression lines lately?</strong></h2>
+                        </div>
+                        <div class="skyn-age-select"> 
+                            <option>Very few or hardly any</option>
+                            <option>Yes! Expression lines only</option>
+                            <option >Yes, and quite deep</option>
+                        </div>
+                        
+                    </div>
+                    <div class="iconos-last-next">
+                        <div class="last-page">
+                            <a href="#" onclick="showPreviousPage(9)">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </a>
+                        </div>
+                        <div class="next-page"id="nextButton4"> 
+                            <a href="#" >
+                                <i class="fa-sharp fa-solid fa-check"></i>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div id="customAlert0" class="custom-alert">
+                        <div class="close-btn" onclick="closeCustomAlert2()">x</div>
+                        <div class="custom-alert-content">
+                            <p> <strong>Oops!</strong></p>
+                          <p> It seems like you forgot to select one of the options </p>
+                        </div>
+                    </div>
+            
+                </div>
+                
             </div>
         </div>
 
@@ -667,12 +641,12 @@
             <div class="common-body">
                 <div class="common-body-wrapper-content">
                       <div class="common-text-input-part">
-                          <div class="common-wrapper-content-question" style="width: 240px; position: absolute; top:50px; left: 50px;">
+                          <div class="done-common-wrapper-content-question" >
                               <h2 class="question" style="margin-left:50px;"><strong>DONE!</strong> Let’s continue.</h2>
                           </div>
                       </div>
       
-                      <div class="done-pages-big-icon" style="position: absolute;">
+                      <div class="done-pages-big-icon" >
                           <a>
                               <svg  width="414" height="414" viewBox="0 0 314 314" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path fill-rule="evenodd" clip-rule="evenodd" d="M157 266.9C217.696 266.9 266.9 217.696 266.9 157C266.9 96.304 217.696 47.1001 157 47.1001C96.3039 47.1001 47.1 96.304 47.1 157C47.1 217.696 96.3039 266.9 157 266.9ZM157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6267 7.8501 7.84998 74.6268 7.84998 157C7.84998 239.373 74.6267 306.15 157 306.15Z" fill="#573C41"/>
@@ -686,93 +660,31 @@
             </div>
         </div>
 
+
         <div class="page-13" style="display: none;">
             <div class="common-body">
                 <div class="common-body-wrapper-content">
                     <div class="common-three-column-part" >
-                        <div class="skyn-type"><p class="three-column-text">SKIN TYPE</p></div>
-                        <div class="skyn-age"><p class="three-column-text">SKIN AGE</p></div>
-                        <div class="solar-damage" style="border: 1px solid #707CEC;
-                        background-color: #707CEC;"><p class="three-column-text">SOLAR DAMAGE</p></div>
-                    </div>
-                    <div class="common-text-input-part">
-                        <div class="common-wrapper-content-question">
-                            <h2 class="question"><strong>How often do you apply sunscreen?</strong></h2>
-                        </div>
-                        <div class="skyn-damage-select" style=" margin-left: 40px;">
-                            <p >Every day</p>
-                            <p >When it's very sunny</p>
-                            <p >When I go to the beach or on a trip</p>
-                            <p >Never</p>
-        
-                        </div>
-                    </div>
-                    
-                                        
-                    <div class="iconos-last-next"  >
-                        <div class="last-page">
-                            <a href="#" onclick="showPreviousPage(13)">
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </a>
-                        </div>
-                        <div class="next-page" id="nextButton5">
-                            <a href="#" >
-                                <i class="fa-sharp fa-solid fa-check"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div id="customAlert1" class="custom-alert">
-                        <div class="close-btn" onclick="closeCustomAlert()">x</div>
-                        <div class="custom-alert-content">
-                            <p> <strong>Oops!</strong></p>
-                          <p style="width: 339px;
-                          height: 77px;
-                          margin-top: -40px;
-                          margin-left: 120px;
-                          "> It seems like you forgot to select one of the options </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page-14" style="display: none;">
-            <div class="common-body">
-                <div class="common-body-wrapper-content">
-                    <div class="common-three-column-part" >
-                        <div class="skyn-type"><p class="three-column-text">SKIN TYPE</p></div>
-                        <div class="skyn-age"><p class="three-column-text">SKIN AGE</p></div>
-                        <div class="solar-damage" style="border: 1px solid #707CEC;
+                        <div class="skyn-type" id="skin-type-mobile6"><p class="three-column-text" id="skin-type-mobile-text6">SKIN TYPE</p></div>
+                        <div class="skyn-age" id="skin-age-mobile6"><p class="three-column-text" id="skin-age-mobile-text6">SKIN AGE</p></div>
+                        <div class="solar-damage" id="solar-damage-mobile6" style="border: 1px solid #707CEC;
                         background-color: #707CEC;"><p class="three-column-text">SOLAR DAMAGE</p></div>
                     </div>
                     <div class="scanner-text-input-part">
-                        <div class="skin-scanner-left-column" style="width: 250px;">
-                            <h2 class="question" style="margin-top:40px"><strong>It's time to see what's going on under your skin.</strong><br> This helps us to see if there is sun damage.</h2>
+                        <div class="skin-scanner-left-column">
+                            <h2 class="question"><strong>It's time to see what's going on under your skin.</strong><br> This helps us to see if there is sun damage.</h2>
                         </div>
                         <div class="skin-scanner-center-column">
                             <div class="skin-scanner-image-container" >
-                                <div class="emoji" >
-                                    <img src="../../images/emoticonos/Emoticonos-02.png" alt="emoji" style="position: absolute;
-                                    width: 200px;
-                                    margin-left: 200px;
-                                    z-index: 2;
-                                    margin-top: -60px;">
-                                    <p style="
-                                    position: absolute;
-                                    z-index: 1;
-                                    margin-left: 355px; margin-top: 25px;
-                                     font-family: 'Sofia Sans', sans-serif;
-                                    font-size: 18px;
-                                    font-weight: 400;
-                                    line-height: 20px;
-                                    letter-spacing: 0em;    width: 100%;
-                                    ">RELAX YOUR FACE</p>
+                                <div class="emoji2" >
+                                    <img src="../../images/emoticonos/Emoticonos-02.png" alt="emoji">
+                                    <p>RELAX YOUR FACE</p>
         
                                     
                                 </div>
                                 <div class="skin-scanner-top-image">
                                     <div class="camera" id="cameraContainer5">
-                                        <video id="cameraFeed5" autoplay></video>
+                                        
                                     </div>
                                         
                                         
@@ -786,11 +698,11 @@
                             <div class="steps-text">
                                 <div class="step">
                                     <p style="width:38px;height: 38px;font-size: 18px;font-family: 'Sofia Sans', sans-serif;color:white; background-color: black;border-radius: 50%;font-weight: 700; margin-top:20px; margin-right: 20px; ">1</p>
-                                    <h3 class="question" style="font-size: 18px;font-family: 'Sofia Sans', sans-serif;font-weight: 400;width: 255px; height: 99px; "> <strong style="font-size: 18px;">First, </strong>center the tip of your nose on the central point where the two lines meet.</h3>
+                                    <h3 class="scanner-text"> <strong style="font-size: 18px;">First, </strong>center the tip of your nose on the central point where the two lines meet.</h3>
                                 </div>
                                 <div class="step">
                                     <p style="width:38px;height: 38px;font-size: 18px;font-family: 'Sofia Sans', sans-serif;color:white; background-color: black;border-radius: 50%;font-weight: 700; margin-top:20px; margin-right: 20px; ">2</p>
-                                    <h3 class="question" style="font-size: 18px;font-family: 'Sofia Sans', sans-serif;font-weight: 400; width: 255px; height: 99px;"> <strong style="font-size: 18px;">Second, </strong>keep fringes and other parts of your hair or accessories that block your face out of the way. Try to capture a clear view of your skin on camera.</h3>
+                                    <h3  class="scanner-text"> <strong style="font-size: 18px;">Second, </strong>keep fringes and other parts of your hair or accessories that block your face out of the way. Try to capture a clear view of your skin on camera.</h3>
                                 </div>
                             </div>
                         </div>
@@ -812,17 +724,17 @@
             </div>
         </div>
 
-        <div class="page-15" style="display: none;">
+        <div class="page-14" style="display: none;">
             <div class="common-body">
                 <div class="common-body-wrapper-content">
-                    <div class="common-three-column-part">
-                        <div class="skyn-type"><p class="three-column-text">SKIN TYPE</p></div>
-                        <div class="skyn-age"><p class="three-column-text">SKIN AGE</p></div>
-                        <div class="solar-damage"  style="border: 1px solid #707CEC;
+                    <div class="common-three-column-part" >
+                        <div class="skyn-type" id="skin-type-mobile7"><p class="three-column-text" id="skin-type-mobile-text7">SKIN TYPE</p></div>
+                        <div class="skyn-age" id="skin-age-mobile7"><p class="three-column-text" id="skin-age-mobile-text7">SKIN AGE</p></div>
+                        <div class="solar-damage" id="solar-damage-mobile7" style="border: 1px solid #707CEC;
                         background-color: #707CEC;"><p class="three-column-text">SOLAR DAMAGE</p></div>
                     </div>
                     <div class="scanner-text-input-part">
-                        <div class="skin-scanner-left-column" style="width: 220px;">
+                        <div class="skin-scanner-left-column-mobile">
                             <h2 class="question"><strong>We`re analyzing your sun damage!</strong></h2><br>
                             <div class="circle-container" id="circle-container1">
                                 <svg class="circle" width="200" height="200" viewBox="0 0 100 100">
@@ -830,16 +742,19 @@
                                 </svg>
                                 <div class="percentage" id="percentage1">0%</div>
                             </div>
+                            
+                             
                         </div>
-                        <div class="skin-scanner-center-column">
+                        <div class="skin-scanner-center-column-mobile">
                             <div class="skin-scanner-image-container">
-                                
+        
                                 <div class="scanner-trans-bottom-image">
                                     <div class="scanner-container">
-                                        <div class="camera" id="cameraContainer6">
-                                            <img id="capturedImage3" alt="Captured Image">
+                                        <div class="bottom-image">
+                                            <div class="camera" id="cameraContainer6">
+                                                <img id="capturedImage3" alt="Captured Image">
+                                            </div>
                                         </div>
-                                               
                                         
                                     </div>
                                 </div>
@@ -854,41 +769,83 @@
                                             </linearGradient>
                                             </defs>
                                         </svg>
-                                            
-                                            
                                         <div class="scanner2"></div>
                                         <div class="vertical-line2"></div>
-    
+        
                                     </div>
                                 </div>
                             </div>
-                        </div> 
-                        <div class="skin-scanner-right-column" style="margin-top:0px; margin-left: 30px">
-                            <div class="skin-scanner-rigth-column-text">
-                                <h2 class="question" style="
-                                        width: 380px;
-                                        height: 440px;
-                                        /* padding: 40px; */
-                                        margin-top: 80px;
-                                    ">Did you know that men, on a <strong>basic level, have slightly more sun-resistant skin than women?</strong> <br> <br>However, the most serious melanomas tend to be in men, and the regular check-up is the lack of sunscreen use and the refusal to go for annual check-ups.</h2>
-                             </div>
+                        </div>
+                            <div class="skin-scanner-right-column-mobile">
+                                <div class="skin-scanner-rigth-column-text" style="padding: 20px;
+                                width: 380px;margin-top:-100px;margin-right: -50px;">
+                                    <h2 class="question">Did you know that men, on a <strong>basic level, have slightly more sun-resistant skin than women?</strong> <br> <br>However, the most serious melanomas tend to be in men, and the regular check-up is the lack of sunscreen use and the refusal to go for annual check-ups.</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+
+        <div class="page-15" style="display: none;">
+            <div class="common-body">
+                <div class="common-body-wrapper-content">
+                    <div class="common-three-column-part" >
+                        <div class="skyn-type" id="skin-type-mobile8"><p class="three-column-text" id="skin-type-mobile-text8">SKIN TYPE</p></div>
+                        <div class="skyn-age" id="skin-age-mobile8"><p class="three-column-text" id="skin-age-mobile-text8">SKIN AGE</p></div>
+                        <div class="solar-damage" id="solar-damage-mobile8" style="border: 1px solid #707CEC;
+                        background-color: #707CEC;"><p class="three-column-text">SOLAR DAMAGE</p></div>
+                    </div>
+                    <div class="common-text-input-part">
+                        <div class="common-wrapper-content-question" id="question-mobile1">
+                            <h2 class="question"><strong>How often do you apply sunscreen?</strong></h2>
+                        </div>
+                        <div class="skyn-damage-select">
+                            <option >Every day</option>
+                            <option >When it's very sunny</option>
+                            <option >When I go to the beach or on a trip</option>
+                            <option>Never</option>
+        
+                        </div>
+                    </div>
+                    
+                                        
+                    <div class="iconos-last-next"  >
+                        <div class="last-page">
+                            <a href="#" onclick="showPreviousPage(13)">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </a>
+                        </div>
+                        <div class="next-page" id="nextButton5">
+                            <a href="#" >
+                                <i class="fa-sharp fa-solid fa-check"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="customAlert1" class="custom-alert">
+                        <div class="close-btn" onclick="closeCustomAlert()">x</div>
+                        <div class="custom-alert-content">
+                            <p> <strong>Oops!</strong></p>
+                          <p > It seems like you forgot to select one of the options </p>
                         </div>
                     </div>
                 </div>
             </div>
-                
         </div>
+
         
         <div class="page-16" style="display: none;">
             <div class="common-body">
                 <div class="common-body-wrapper-content">
-                    <div class="common-text-input-part" style="margin-bottom: -80px;">
-                        <div class="common-wrapper-content-question" style="width: 240px; position: absolute; top:50px; left: 50px;">
+                    <div class="common-text-input-part" >
+                        <div class="done-common-wrapper-content-question" >
                           <h2 class="question" style="margin-left:50px;"><strong>DONE!<br></strong>We are<br>almost<br>finishing.</h2>
                         </div>
                     </div>
       
-                    <div class="done-pages-big-icon" style="position: absolute;">
+                    <div class="done-pages-big-icon" >
                       <a>
                           <svg  width="414" height="414" viewBox="0 0 314 314" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M157 266.9C217.696 266.9 266.9 217.696 266.9 157C266.9 96.304 217.696 47.1001 157 47.1001C96.304 47.1001 47.1001 96.304 47.1001 157C47.1001 217.696 96.304 266.9 157 266.9ZM157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6268 7.8501 7.8501 74.6268 7.8501 157C7.8501 239.373 74.6268 306.15 157 306.15Z" fill="#573C41"/>
@@ -908,11 +865,7 @@
                 <div class="common-body-wrapper-content">
                     <div class="common-text-input-part">
                         <div class="common-wrapper-content-question">
-                            <h2 class="question" style="
-                            width: 350px;
-                            height: 120px;
-                            margin-left: 445px;
-                            text-align: center;"> <strong>We just need a little more information about you </strong> <br> We’re almost there! </h2>
+                            <h2 class="question" id="transition-other-text"> <strong>We just need a little more information about you </strong> <br> We’re almost there! </h2>
                         </div>
                     </div>
                 </div>
@@ -925,31 +878,27 @@
                     <div class="common-text-input-part">
                         <div class="other-wrapper-content-question">
                             <h2 class="question"> <strong>What do you want to improve?  </strong></h2>
-                            <p class="small-lettering" style="font-family: 'Sofia Sans', sans-serif;
-                            font-size: 20px;
-                            font-weight: 400;
-                            line-height: 29px;
-                            letter-spacing: 0em;
-                            text-align: left;
-                            width: 235px;
-                            height: 203px;
-                            " >Select your top concerns or priorities for improving the health of your skin. 
-                                We will build a tailored recommendation to address your specific needs.</p>  
+                            <p class="small-lettering">
+                            Select your top concerns or priorities for improving the health of your skin. 
+                            We will build a tailored recommendation to address your specific needs.</p>  
+                            <p class="small-lettering-mobile">
+                                Select your top concerns or priorities for improving the health of your skin.</p> 
+
                         </div>
                         <div class="options-select">
                             <div class="column" id="column1">
-                                <p class="option" onclick="toggleActive4(this)">Solar damage</p>
-                                <p class="option" onclick="toggleActive4(this)">Wrinkles</p>
-                                <p class="option" onclick="toggleActive4(this)">Blemishes</p>
-                                <p class="option" onclick="toggleActive4(this)">Dark circles</p>
-                                <p class="option" onclick="toggleActive4(this)">Dryness</p>
+                                <option class="option" style="margin: 0px 25px;" onclick="toggleActive4(this)">Solar damage</option>
+                                <option class="option" onclick="toggleActive4(this)">Wrinkles</option>
+                                <option class="option" onclick="toggleActive4(this)">Blemishes</option>
+                                <option class="option" onclick="toggleActive4(this)">Dark circles</option>
+                                <option class="option" onclick="toggleActive4(this)">Dryness</option>
                             </div>
-                          <div class="column" id="column2">
-                                <p class="option" onclick="toggleActive4(this)">Oiliness</p>
-                                <p class="option" onclick="toggleActive4(this)">Premature ageing</p>
-                                <p class="option" onclick="toggleActive4(this)">Redness</p>
-                                <p class="option" onclick="toggleActive4(this)">Breakouts</p>
-                                <p class="option" onclick="toggleActive4(this)">Flaking</p>
+                          <div class="column2" id="column2">
+                                <option class="option" style="margin: 0px 25px;" onclick="toggleActive4(this)">Oiliness</option>
+                                <option class="option" onclick="toggleActive4(this)">Premature ageing</option>
+                                <option class="option" onclick="toggleActive4(this)">Redness</option>
+                                <option class="option" onclick="toggleActive4(this)">Breakouts</option>
+                                <option class="option" onclick="toggleActive4(this)">Flaking</option>
                           </div>
                         </div>
                     </div>    
@@ -969,11 +918,7 @@
                             <div class="close-btn" onclick="closeCustomAlert3()">x</div>
                             <div class="custom-alert-content">
                                 <p> <strong>Oops!</strong></p>
-                                <p style="width: 339px;
-                                    height: 77px;
-                                    margin-top: -40px;
-                                    margin-left: 120px;
-                                "> It seems like you forgot to select one of the options </p>
+                                <p > It seems like you forgot to select one of the options </p>
                             </div>
                         </div>
                     
@@ -990,16 +935,16 @@
                         <div class="other-wrapper-content-question" style="width: 260px;">
                             <h2 class="question"> <strong>Do you have any other personal care concerns?</strong> </h2>
                         </div>
-                        <div class="options-select" style="margin-bottom: 0px;">
-                            <div class="column" id="column1">
-                                <p class="option0" onclick="toggleActive5(this)">Acne and body cysts</p>
-                                <p class="option0" onclick="toggleActive5(this)">Hair loss</p>
-                                <p class="option0" onclick="toggleActive5(this)">Lack of energy</p>
-                                <p class="option0" onclick="toggleActive5(this)">Body hair removal</p>
-                                <p class="option0" onclick="toggleActive5(this)">Testosterone</p>
+                        <div class="options-select" >
+                            <div class="column" >
+                                <option class="option0" style="margin: 0px 25px;" onclick="toggleActive5(this)">Acne and body cysts</option>
+                                <option class="option0" onclick="toggleActive5(this)">Hair loss</option>
+                                <option class="option0" onclick="toggleActive5(this)">Lack of energy</option>
+                                <option class="option0" onclick="toggleActive5(this)">Body hair removal</option>
+                                <option class="option0" onclick="toggleActive5(this)">Testosterone</option>
                             </div>
-                            <div class="column" id="column2">
-                                <p class="option" onclick="toggleActive5(this)">Other</p>
+                            <div class="column">
+                                <option class="option0" style="margin: 0px 25px;" onclick="toggleActive5(this)">Other</option>
                                 <textarea style="border: 1px solid rgba(87, 60, 65, 1);" type="other-text" id="text" name="input-text" placeholder="Tell us more about your concerns ..."></textarea>
     
                             </div>
@@ -1023,11 +968,7 @@
                         <div class="close-btn" onclick="closeCustomAlert4()">x</div>
                         <div class="custom-alert-content">
                             <p> <strong>Oops!</strong></p>
-                          <p style="width: 339px;
-                          height: 77px;
-                          margin-top: -40px;
-                          margin-left: 120px;
-                          "> It seems like you forgot to select one of the options </p>
+                          <p > It seems like you forgot to select one of the options </p>
                         </div>
                     </div>
                 </div>
@@ -1040,24 +981,18 @@
                 <div class="common-text-input-part">
                     <div class="common-wrapper-content-question">
                         <h2 class="question"> <strong>What is your email address?</strong>  </h2>
-                        <p class="small-lettering" style="font-family: 'Sofia Sans', sans-serif;
-                        font-size: 20px;
-                        font-weight: 400;
-                        line-height: 29px;
-                        letter-spacing: 0em;
-                        text-align: left;
-                        width: 260px;
-                        margin-top:-10px;
-                        " >Providing your email address will allow you to save your answers so you can come back to them later.</p>
+                        <p class="small-lettering" >Providing your email address will allow you to save your answers so you can come back to them later.</p>
+                        <p class="small-lettering-mobile" >Providing your email address will allow you to save your answers so you can come back to them later.</p>
+
                     </div>
-                    <div class="common-input-text" style="margin-left: 100px;">
+                    <div class="common-input-text">
                         <form id="emailForm">
                             <input style="margin-left: -50px; border: 1px solid rgba(87, 60, 65, 1); box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;" type="text" id="email" name="required-email" placeholder="youremail@mail.com" required>
                         </form>
                           
                     </div>
                 
-                    <div class="iconos-last-next" >
+                    <div class="iconos-last-next" style="margin-left: -22px;" >
                         <div class="last-page">
                             <a href="#" onclick="showPreviousPage(20)">
                                 <i class="fa-solid fa-arrow-left"></i>
@@ -1076,35 +1011,26 @@
         <div class="page-21" style="display: none;">
             <div class="common-body-wrapper-content">
                 <div class="common-text-input-part">
-                    <div class="common-wrapper-content-question">
+                    <div class="common-wrapper-content-question" id="question-mobile2">
                         <h2 class="question" style="width: 200px;"> Last question, <br><strong> how did you find us?</strong> </h2>
-                        <p class="small-lettering" style="font-family: 'Sofia Sans', sans-serif;
-                        font-size: 20px;
-                        font-weight: 400;
-                        line-height: 29px;
-                        letter-spacing: 0em;
-                        text-align: left;
-                        position: absolute;
-                        width: 235px;
-                        margin-top: -15px;
-                        
-                        
-                        " >This will not affect your recommendations.</p>    
+                        <p class="small-lettering">This will not affect your recommendations.</p>
+                        <p class="small-lettering-mobile">This will not affect your recommendations.</p>    
+ 
                     </div>
-                    <div class="options-select" style="margin-bottom: 0px;">
+                    <div class="options-select">
                         <div class="column">
-                            <p class="option1" onclick="toggleActive6(this)">Internet search</p>
-                            <p class="option1" onclick="toggleActive6(this)">Recommendation</p>
-                            <p class="option1" onclick="toggleActive6(this)">Facebook</p>
-                            <p class="option1" onclick="toggleActive6(this)">Instagram</p>
-                            <p class="option1" onclick="toggleActive6(this)">Tiktok</p>
+                            <option class="option1" style="margin:0px 25px;" onclick="toggleActive6(this)">Internet search</option>
+                            <option class="option1" onclick="toggleActive6(this)">Recommendation</option>
+                            <option class="option1" onclick="toggleActive6(this)">Facebook</option>
+                            <option class="option1" onclick="toggleActive6(this)">Instagram</option>
+                            <option class="option1" onclick="toggleActive6(this)">Tiktok</option>
                         </div>
                         <div class="column">
-                            <p class="option1" onclick="toggleActive6(this)">YouTube</p>
-                            <p class="option1" onclick="toggleActive6(this)">Influencer</p>
-                            <p class="option1" onclick="toggleActive6(this)">Press or blog</p>
-                            <p class="option1" onclick="toggleActive6(this)">Amazon</p>
-                            <p class="option1" onclick="toggleActive6(this)">Other</p>
+                            <option class="option1" style="margin:0px 25px;" onclick="toggleActive6(this)">YouTube</option>
+                            <option class="option1" onclick="toggleActive6(this)">Influencer</option>
+                            <option class="option1" onclick="toggleActive6(this)">Press or blog</option>
+                            <option class="option1" onclick="toggleActive6(this)">Amazon</option>
+                            <option class="option1" onclick="toggleActive6(this)">Other</option>
                         </div>
                     </div>
                     
@@ -1125,11 +1051,7 @@
                     <div class="close-btn" onclick="closeCustomAlert5()">x</div>
                     <div class="custom-alert-content">
                         <p> <strong>Oops!</strong></p>
-                      <p style="width: 339px;
-                      height: 77px;
-                      margin-top: -40px;
-                      margin-left: 120px;
-                      "> It seems like you forgot to select one of the options </p>
+                      <p > It seems like you forgot to select one of the options </p>
                     </div>
                 </div>
             </div>

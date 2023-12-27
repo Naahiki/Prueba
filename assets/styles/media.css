@@ -1,19 +1,253 @@
-/* Media query para pantallas pequeñas */
-@media screen and (max-width: 650px) {
-    .question {
-        display: block; /* Cambia a display block en pantallas pequeñas */
+ /* Media query para pantallas más pequeñas */
+ @media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Estilos específicos para tabletas */
+
+    .common-body-wrapper-content {
+      width: 85%; 
+      max-width: none; 
+      height: auto; 
+      margin: 5% auto; 
+      
+    }
+  
+    .common-text-input-part {
+      grid-template-columns: 1fr; /* Un solo columna en lugar de dos */
+      grid-gap: 10px; /
     }
 
+    
+    .skin-text-input-part,
+    .transition-text-input-part {
+      display: grid;
+      grid-template-columns: 1fr; /* Una columna en lugar de tres */
+    
+    }
+  
     .common-wrapper-content-question {
-        text-align: left; /* Alinea la pregunta a la izquierda en pantallas pequeñas */
+      padding: 50px; /* Reducción del padding */
+      width: 80%; /* Ocupa todo el ancho disponible */
+      text-align: center; /* Centrar el texto */
+    }
+  
+    h2.question {
+      font-size: 24px; /* Reducción del tamaño de la fuente */
+      line-height: 32px; /* Ajuste en la altura de línea */
+    }
+  
+    h2.question strong {
+      font-size: 24px; /* Tamaño de la fuente del texto fuerte */
+      line-height: 32px; /* Ajuste en la altura de línea */
     }
 
-    .common-input-text {
-        width: 100%; /* O ajusta según tus necesidades */
-    }
 
-    .common-input-text input[type="text"] {
-        width: 100%; /* O ajusta según tus necesidades */
-        max-width: none; /* Ancho completo en pantallas pequeñas */
-    }
+  
+  .checkbox {
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
+    margin-top:5%;
+  }
+  
+  .checkbox input[type="checkbox"] {
+    width: 6%; /* Ancho del checkbox en porcentaje */
+    height: 8%; /* Altura del checkbox en porcentaje */
+    border-radius: 50%; /* Hacerlo redondo */
+    border: 0.1em solid #ccc; /* Reducir el grosor del borde */
+    margin-top: -4%; /* Ajuste del margen superior en porcentaje */
+    appearance: none;
+    bottom: 52%; /* Posición inferior en porcentaje */
+    left: 60%; /* Posición izquierda en porcentaje */
+  }
+  
+  .checkbox input[type="checkbox"]::before {
+    content: "";
+    color: #DBF22E;
+    display: inline-block;
+    width: 4%; /* Tamaño del punto en porcentaje */
+    text-align: center;
+    line-height: 1.8%; /* Altura del punto en porcentaje */
+  }
+  
+  .checkbox input[type="checkbox"]:checked::before {
+    content: "\2022";
+    font-size: 5%; /* Tamaño del punto en porcentaje */
+    text-align: center;
+    margin-top: 0.15%; /* Ajuste del margen superior en porcentaje */
+    margin-right: 0.15%; /* Ajuste del margen derecho en porcentaje */
+  }
+  
+  .checkbox input[type="checkbox"]:checked {
+    box-shadow: 0.1em -0.6em 3.7em 5.4em rgba(217, 217, 217, 1) inset; /* Tamaño de la sombra en porcentaje */
+  }
+  
+  .checkbox.error-border2 input[type="checkbox"]:checked::before {
+    content: "\2022";
+    font-size: 5%; /* Tamaño del punto en porcentaje */
+    text-align: center;
+    margin-left: -0.2%; /* Ajuste del margen izquierdo en porcentaje */
+    margin-top: 0px;
+  }
+  
+  .checkbox label {
+    font-family: 'Sofia Sans', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0em;
+    text-align: left;
+    cursor: pointer;
+    color: #555;
+    margin-left: 1%; /* Margen izquierdo en porcentaje */
+  }
+
+
+  .common-three-column-part {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 85%;
+  }
+  
+  .common-three-column-part > .skyn-type,
+  .common-three-column-part > .skyn-age,
+  .common-three-column-part > .solar-damage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.1em solid #D9D9D9; /* Grosor del borde en porcentaje */
+    height: 1%;
+    border-radius: 20px; /* Radio del borde en porcentaje */
+    margin-right: 1%; /* Margen derecho en porcentaje */
+    padding: 0.5%; /* Relleno en porcentaje */
+    background-color: #D9D9D9;
+    color: white;
+    font-family: 'Sofia Sans', sans-serif;
+    font-weight: 400px; /* Duda, puede que se refiera a 400 en peso, no en px */
+  }
+  
+  .common-three-column-part > .skyn-type p,
+  .common-three-column-part > .skyn-age p,
+  .common-three-column-part > .solar-damage p {
+    margin: 0;
+    font-family: 'Sofia Sans', sans-serif;
+    font-weight: 700;
+    font-size: 80%; /* Tamaño de fuente en porcentaje */
+  }
+
+  /* Images */
+
+.skin-types-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .skin-types-images-top-row {
+    display: flex;
+    width: 100%;
+    margin-right: -2%; /* Margen derecho en porcentaje */
+  }
+  
+  .skin-types-images-bottom-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 5%; /* Margen superior en porcentaje */
+    margin-left: 2%; /* Margen izquierdo en porcentaje */
+  }
+  
+  .skin-types-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .svg-image {
+    box-shadow: 0px 0.4% 0.4% 0px rgba(0, 0, 0, 0.25) inset; /* Sombra en porcentaje */
+    border: 0.1% solid rgba(87, 60, 65, 1); /* Grosor del borde en porcentaje */
+    border-radius: 50%;
+    margin: 1%; /* Margen en porcentaje */
+   
+    transition: 0.2s;
+  }
+  
+  .svg-image:hover,
+  .svg-image.active {
+    border: 0.1% solid rgba(87, 60, 65, 1); /* Grosor del borde en porcentaje */
+    box-shadow: -0.1% -0.1% 0px 0.8% #dbf22e inset; /* Sombra en porcentaje */
+  }
+  
+  p.image-text {
+    height: 5%; /* Altura en porcentaje */
+    text-align: center;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 14px; /* Tamaño de fuente en porcentaje */
+    line-height: 100%; /* Altura de línea en porcentaje */
+    font-weight: 400;
+    color: black;
+  }
+  
+  .image-text strong {
+    font-weight: bold;
+  }
+  .scanner-text-input-part{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .skin-scanner-left-column {
+    /* Estilos para la izquierda en una pantalla de 768px */
+    margin: 20px 0;
+    text-align: center;
+    /* order: 3; */
+    position: absolute;
+    top: 40px;
+  }
+
+  .skin-scanner-center-column {
+    margin-top:200px;
+    margin-left: 0px;
 }
+
+  .skin-scanner-right-column {
+    margin-top:350px;
+    margin-right:-50px;
+
+  }
+
+  .skin-scanner-right-column > .skin-scanner-right-column-text {
+    right: 40px;
+    /* margin-left: 0; */
+    margin-top: 20px;
+    /* text-align: center; */
+    position: absolute;
+    top: 40px;
+    /* font-size: 14px; */
+}
+  
+
+
+
+  /* Estilos base */
+
+  
+  .intro-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .circle-container {
+    position: absolute;
+    left: 160px;
+    top: 50px;
+}
+
+  
+}
+  
+
+
+
+
+
+  

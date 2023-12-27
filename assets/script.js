@@ -194,20 +194,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Función para obtener la lista de países desde la API REST Countries
   function fetchCountries() {
-      fetch('https://restcountries.com/v3.1/all')
-          .then(response => response.json())
-          .then(data => {
-              data.forEach(country => {
-                  const option = document.createElement('option');
-                  option.value = country.name.common;
-                  option.textContent = country.name.common;
-                  countryInput.appendChild(option);
-              });
-          })
-          .catch(error => {
-              console.error('Error fetching countries:', error);
-          });
-  }
+    fetch('https://restcountries.com/v3.1/all')
+        .then(response => response.json())
+        .then(data => {
+            const countries = data.sort((a, b) => {
+                // Orden alfabético por el nombre común del país
+                const nameA = a.name.common.toUpperCase();
+                const nameB = b.name.common.toUpperCase();
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+                return 0;
+            });
+
+            countries.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.name.common;
+                option.textContent = country.name.common;
+                countryInput.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching countries:', error);
+        });
+}
+
 
   fetchCountries(); // Llamada a la función para cargar los países al cargar la página
 
@@ -275,10 +289,10 @@ document.addEventListener("DOMContentLoaded", function () {
       showCustomAlert1(); // Utiliza tu alerta personalizada
       return false;
     } else {
-        const currentPage = document.querySelector('.page-5');
+        const currentPage = document.querySelector('.page-7');
         currentPage.style.display = 'none'; // Ocultar página 5
 
-        const nextPage = document.querySelector('.page-6');
+        const nextPage = document.querySelector('.page-8');
         nextPage.style.display = 'block'; // Mostrar página 6
         return true;
     }
@@ -298,8 +312,8 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const percentageElement = document.getElementById("percentage");
   const circle = document.querySelector(".progress-ring-circle");
+  const page6 = document.querySelector('.page-6');
   const page7 = document.querySelector('.page-7');
-  const page8 = document.querySelector('.page-8');
 
   function animateProgress() {
     let currentPercentage = 0;
@@ -318,9 +332,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentPercentage === 100) {
         clearInterval(animate);
         setTimeout(() => {
-          page7.style.display = 'none'; // Ocultar la página actual después de 2 segundos
-          page8.style.display = 'block'; // Mostrar la siguiente página
-        }, 2000); // Retraso de 2 segundos antes de ocultar la página
+          page6.style.display = 'none'; 
+          page7.style.display = 'block'; 
+        }, 2000); 
       }
     }, interval);
   }
@@ -333,7 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  observer.observe(page7);
+  observer.observe(page6);
 });
 
 
@@ -343,8 +357,8 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const percentageElement2 = document.getElementById("percentage0");
   const circle2 = document.querySelector(".progress-ring-circle0");
+  const page10 = document.querySelector('.page-10');
   const page11 = document.querySelector('.page-11');
-  const page12 = document.querySelector('.page-12');
 
   function animateProgress2() {
     let currentPercentage2 = 0;
@@ -363,8 +377,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentPercentage2 >= 100) {
         clearInterval(animate2);
         setTimeout(() => {
-          page11.style.display = 'none'; // Ocultar la página actual después de 2 segundos
-          page12.style.display = 'block'; // Mostrar la siguiente página
+          page10.style.display = 'none'; // Ocultar la página actual después de 2 segundos
+          page11.style.display = 'block'; // Mostrar la siguiente página
         }, 2000); // Retraso de 2 segundos antes de ocultar la página
       }
     }, interval2);
@@ -378,15 +392,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  observer2.observe(page11);
+  observer2.observe(page10);
 });
 
 // Progress bar-3
 document.addEventListener("DOMContentLoaded", function () {
   const percentageElement3 = document.getElementById("percentage1");
   const circle3 = document.querySelector(".progress-ring-circle1");
+  const page14 = document.querySelector('.page-14');
   const page15 = document.querySelector('.page-15');
-  const page16 = document.querySelector('.page-16');
 
   function animateProgress3() {
     let currentPercentage3 = 0;
@@ -405,8 +419,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentPercentage3 >= 100) {
         clearInterval(animate3);
         setTimeout(() => {
-          page15.style.display = 'none'; 
-          page16.style.display = 'block'; 
+          page14.style.display = 'none'; 
+          page15.style.display = 'block'; 
         }, 2000); 
       }
     }, interval3);
@@ -420,7 +434,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  observer3.observe(page15);
+  observer3.observe(page14);
 });
 
 
@@ -517,7 +531,7 @@ function closeCustomAlert2() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const options2 = document.querySelectorAll('.skyn-age-select p');
+  const options2 = document.querySelectorAll('.skyn-age-select option');
 
   options2.forEach((option) => {
     option.addEventListener('click', function() {
@@ -534,17 +548,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function validateSelectionThree() {
-    const selectedOptions = document.querySelectorAll('.skyn-age-select p.active');
+    const selectedOptions = document.querySelectorAll('.skyn-age-select option.active');
 
     if (selectedOptions.length !== 1) {
-      showCustomAlert2(); // Utiliza tu alerta personalizada
+      showCustomAlert2(); 
       return false;
     } else {
-        const currentPage = document.querySelector('.page-9');
-        currentPage.style.display = 'none'; // Ocultar página 5
+        const currentPage = document.querySelector('.page-11');
+        currentPage.style.display = 'none'; 
 
-        const nextPage = document.querySelector('.page-10');
-        nextPage.style.display = 'block'; // Mostrar página 6
+        const nextPage = document.querySelector('.page-12');
+        nextPage.style.display = 'block'; 
         return true;
     }
   
@@ -574,8 +588,8 @@ function closeCustomAlert() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const options3 = document.querySelectorAll('.skyn-damage-select p');
-
+  const options3 = document.querySelectorAll('.skyn-damage-select option');
+  
   options3.forEach((option1) => {
     option1.addEventListener('click', function() {
       toggleActive3(this);
@@ -591,17 +605,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function validateSelectionThree() {
-    const selectedOptions3 = document.querySelectorAll('.skyn-damage-select p.active');
+    const selectedOptions3 = document.querySelectorAll('.skyn-damage-select option.active');
 
     if (selectedOptions3.length !== 1) {
-      showCustomAlert(); // Utiliza tu alerta personalizada
+      showCustomAlert(); 
       return false;
     } else {
-        const currentPage3 = document.querySelector('.page-13');
-        currentPage3.style.display = 'none'; // Ocultar página 5
+        const currentPage3 = document.querySelector('.page-15');
+        currentPage3.style.display = 'none'; 
 
-        const nextPage3 = document.querySelector('.page-14');
-        nextPage3.style.display = 'block'; // Mostrar página 6
+        const nextPage3 = document.querySelector('.page-16');
+        nextPage3.style.display = 'block'; 
         return true;
     }
   
@@ -638,13 +652,13 @@ function toggleActive4(element) {
 
 function checkSelection() {
     if (selectedCount === 0) {
-        showCustomAlert3(); // Mostrar alerta si no hay opciones seleccionadas
+        showCustomAlert3(); 
     } else {
         const currentSection = document.querySelector('.page-18');
         const nextSection = document.querySelector('.page-19');
 
-        currentSection.style.display = 'none'; // Oculta la sección actual
-        nextSection.style.display = 'block'; // Muestra la siguiente sección
+        currentSection.style.display = 'none'; 
+        nextSection.style.display = 'block'; 
     }
 }
 
@@ -670,13 +684,13 @@ function toggleActive5(element) {
 
 function checkSelection2() {
     if (selectedCount2 === 0) {
-        showCustomAlert4(); // Mostrar alerta si no hay opciones seleccionadas
+        showCustomAlert4(); 
     } else {
         const currentSection2 = document.querySelector('.page-19');
         const nextSection2 = document.querySelector('.page-20');
 
-        currentSection2.style.display = 'none'; // Oculta la sección actual
-        nextSection2.style.display = 'block'; // Muestra la siguiente sección
+        currentSection2.style.display = 'none'; 
+        nextSection2.style.display = 'block'; 
     }
 }
 

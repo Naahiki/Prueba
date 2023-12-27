@@ -1,0 +1,15 @@
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+
+    .common-body-wrapper-content {
+      width: 90%;
+      height: 90%;
+      }
+
+    .common-three-column-part {
+
+      width: 85%;
+    }
+    
+
+    
+}
