@@ -1,6 +1,6 @@
 
   /* Estilos base */
-  @media all and (max-width: 480px)    {
+  @media all and (max-width: 680px)    {
   .header{
     display: none;
   }
@@ -31,11 +31,26 @@
 
   .intro-button {
     margin-left: 0px;
+    margin-bottom: 10%;
 }
 
 #intro-button{
   width: 100%;
 }
+
+.button-iphone {
+  display: block;
+  background-color: #573c41;
+  color: white;
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  position: absolute;
+  left: 10px;
+}
+
 
 .common-body{
   justify-content: center;
@@ -264,14 +279,18 @@ margin-left: 5%;
 }
 
 #mobile-version{
-  margin-left: -5px;
   width: 0px;
   margin-top: 30%;
   margin-bottom: 10%;
 }
 
 #mobile-version0{
-  margin-left: -5px;
+  width: 0px;
+  margin-top: 30%;
+  margin-bottom: 10%;
+}
+
+#mobile-version1{
   width: 0px;
   margin-top: 30%;
   margin-bottom: 10%;
@@ -287,9 +306,17 @@ margin-left: 5%;
 
 .emoji p {
   position: absolute;
-  left: -180px;
-  width: 170px;
+font-size: 85%;
   bottom: 90.5%;
+  margin-left: 60%;
+}
+
+.emoji img{
+  position: absolute;
+    width: 38%;
+    margin-left: 60%;
+    z-index: 2;
+    margin-top: -10%;
 }
 
 .emoji1 img {
@@ -315,8 +342,10 @@ margin-left: 5%;
 }
 
 
-.skin-scanner-image-container{
+.skin-scanner-image-container {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .skin-scanner-right-column {
@@ -329,6 +358,11 @@ margin-left: 5%;
   flex-direction: column;
   padding: 0px;
   margin-top: 10%;
+}
+
+.scanner-container{
+  width: 100%;
+  height: 100%;
 }
 
 .skyn-age-select{
@@ -492,7 +526,7 @@ width: 80%;
 .common-three-column-part{
   margin-top: 5%;
   margin-left: 3%;
-  width: 100%;
+  width: 95%;
 }
 
 #skin-type-mobile0{

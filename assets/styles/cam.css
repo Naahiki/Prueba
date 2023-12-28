@@ -59,9 +59,10 @@
     object-fit: cover;/* Asegura que el video cubra completamente el contenedor manteniendo la relación de aspecto */
     transform: scaleX(-1); 
     border-radius: 176px;
-
-
+    
 }
+
+
 
 #cameraContainer3 {
     position: absolute;
@@ -96,8 +97,7 @@
 #cameraContainer6 {
     position: absolute;
     z-index: 1;
-    width: 352px;
-    height: 570px;
+
 
     border-radius: 176px;
     overflow: hidden;

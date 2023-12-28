@@ -27,14 +27,23 @@ function showPreviousPage(pageNumber) {
           transitionContentId = 'transition-form-content0';
           hideGreeting = true;
           break;
+      case 7:
+          previousPageNumber = 5;
+          break;
       case 9:
-          previousPageNumber = 6;
+          previousPageNumber = 7;
+          break;
+      case 11:
+          previousPageNumber = 9;
           break;
       case 13:
-          previousPageNumber = 10;
+          previousPageNumber = 11;
+          break;
+      case 15:
+          previousPageNumber = 13;
           break;
       case 18:
-          previousPageNumber = 14;
+          previousPageNumber = 15;
           break;
       default:
           previousPageNumber = pageNumber - 1;

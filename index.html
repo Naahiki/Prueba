@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOXSR | Rutina para hombres</title>
 
 
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/styles/header.css">
     <link rel="stylesheet" href="assets/styles/common.css">
     <link rel="stylesheet" href="assets/styles/cam.css">
-    <!-- <link rel="stylesheet" href="assets/styles/media.css"> -->
+    <link rel="stylesheet" href="assets/styles/media.css">
     <link rel="stylesheet" href="assets/styles/medias2.css">
     <!-- <link rel="stylesheet" href="assets/styles/medias3.css"> -->
 
@@ -265,11 +265,12 @@
                             <div class="skin-scanner-image-container">
                                 <div class="bottom-image">
                                     <div class="camera" id="cameraContainer1">
-                                        
                                     </div>
                                 </div>
                                 <div class="top-image">
-                                    <img class="superimposed-image" src="../../images/scanner/cruzBlanca.png" alt="cruz"> 
+                                    <img class="superimposed-image" src="../../images/scanner/cruzBlanca.png" alt="cruz">
+                                    <button  style="position: absolute; left: 10px;" onclick="startVideo()">Iniciar Video</button>
+ 
                                 </div>
                             </div>
                             
@@ -290,7 +291,7 @@
                     </div>
                     <div class="iconos-last-next">
                         <div class="last-page">
-                            <a href="#" onclick="showPreviousPage(6);">
+                            <a href="#" onclick="showPreviousPage(5);">
                                 <i class="fa-solid fa-arrow-left"></i>
                             </a>
                         </div>
@@ -333,7 +334,7 @@
                                     <div class="scanner-container">
                                         <div class="bottom-image">
                                             <div class="camera" id="cameraContainer2">
-                                                <img id="capturedImage0" alt="Captured Image">
+                                                <img id="capturedImage0" alt="Captured Image" >
                                             </div>
                                         </div>
                                         
@@ -342,13 +343,13 @@
                                 <div class="scanner-trans-top-image">
                                     <div class="scanner-container" style="z-index: 5;">
                                         <svg  width="352" height="570" viewBox="0 0 352 570" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="352" height="570" rx="176" fill="url(#paint0_linear_9_104)" fill-opacity="0.28"/>
-                                        <defs>
-                                        <linearGradient id="paint0_linear_9_104" x1="176" y1="0" x2="176" y2="570" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#DBF22E"/>
-                                        <stop offset="1" stop-color="#DBF22E" stop-opacity="0"/>
-                                        </linearGradient>
-                                        </defs>
+                                            <rect width="352" height="570" rx="176" fill="url(#paint0_linear_9_104)" fill-opacity="0.28"/>
+                                            <defs>
+                                            <linearGradient id="paint0_linear_9_104" x1="176" y1="0" x2="176" y2="570" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#DBF22E"/>
+                                            <stop offset="1" stop-color="#DBF22E" stop-opacity="0"/>
+                                            </linearGradient>
+                                            </defs>
                                         </svg>
                                         <div class="scanner0"></div>
                                         <div class="vertical-line0"></div>
@@ -414,7 +415,7 @@
                     </div>
                     <div class="iconos-last-next" >
                         <div class="last-page">
-                            <a href="#" onclick="showPreviousPage(5)">
+                            <a href="#" onclick="showPreviousPage(7)">
                                 <i class="fa-solid fa-arrow-left"></i>
                             </a>
                         </div>
@@ -486,7 +487,8 @@
                                 <div class="skin-scanner-image-container">
                                     <div class="bottom-image">
                                         <div class="camera" id="cameraContainer3">
-                                            
+                                            <!-- Botón para iniciar el video -->
+                                            <button onclick="startVideo()">Iniciar Video</button>
                                         </div>
                                     </div>
                                     <div class="top-image">
@@ -510,7 +512,7 @@
                     </div>
                     <div class="iconos-last-next">
                         <div class="last-page">
-                            <a href="#" onclick="showPreviousPage(10)">
+                            <a href="#" onclick="showPreviousPage(9)">
                                 <i class="fa-solid fa-arrow-left"></i>
                             </a>
                         </div>
@@ -524,8 +526,6 @@
                 
             </div>
         </div>
-
-       
         <div class="page-10" style="display: none;">
             <div class="common-body">
                 <div class="common-body-wrapper-content">
@@ -540,7 +540,7 @@
                             <h2 class="question"><strong>We`re analizing your expression lines!</strong></h2><br>
                             <div class="circle-container">
                                 <svg class="circle" width="200" height="200" viewBox="0 0 100 100">
-                                    <circle class="progress-ring-circle0"  style="stroke:#47D36F;"    cx="50" cy="50" r="40"></circle>
+                                    <circle class="progress-ring-circle0" stroke="#47D36F"   cx="50" cy="50" r="40"></circle>
                                 </svg>
                             
                                 <div class="percentage" id="percentage0">0%</div>
@@ -548,9 +548,9 @@
                             
                              
                         </div>
-                        <div class="skin-scanner-center-column" id="mobile-version0">
+                        <div class="skin-scanner-center-column" >
                             <div class="skin-scanner-image-container">
-        
+    
                                 <div class="scanner-trans-bottom-image">
                                     <div class="scanner-container">
                                         <div class="bottom-image">
@@ -563,18 +563,18 @@
                                 </div>
                                 <div class="scanner-trans-top-image">
                                     <div class="scanner-container" style="z-index: 5;">
-                                        <svg width="352" height="570" viewBox="0 0 352 570" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect width="352" height="570" rx="176" fill="url(#paint0_linear_9_177)" fill-opacity="0.28"/>
+                                        <svg  width="352" height="570" viewBox="0 0 352 570" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="352" height="555" rx="176" fill="url(#paint0_linear_9_177)" fill-opacity="0.28"/>
                                             <defs>
                                             <linearGradient id="paint0_linear_9_177" x1="176" y1="0" x2="176" y2="570" gradientUnits="userSpaceOnUse">
                                             <stop stop-color="#47D36F"/>
-                                            <stop offset="1" stop-color="#47D36F" stop-opacity="0.24"/>
+                                            <stop offset="1" stop-color="#47D36F" stop-opacity="-0.1"/>
                                             </linearGradient>
                                             </defs>
                                         </svg>
                                         <div class="scanner1"></div>
                                         <div class="vertical-line1"></div>
-        
+    
                                     </div>
                                 </div>
                             </div>
@@ -588,9 +588,10 @@
                         </div>
                     </div>
                 </div>
-        
+    
             </div>
         </div>
+
         <div class="page-11" style="display: none;">
             <div class="common-body">
                 <div class="common-body-wrapper-content">
@@ -613,7 +614,7 @@
                     </div>
                     <div class="iconos-last-next">
                         <div class="last-page">
-                            <a href="#" onclick="showPreviousPage(9)">
+                            <a href="#" onclick="showPreviousPage(11)">
                                 <i class="fa-solid fa-arrow-left"></i>
                             </a>
                         </div>
@@ -684,9 +685,10 @@
                                 </div>
                                 <div class="skin-scanner-top-image">
                                     <div class="camera" id="cameraContainer5">
+                                        <!-- Botón para iniciar el video -->
                                         
                                     </div>
-                                        
+                                    <button class="button-iphone"   onclick="startVideo()">Iniciar Video</button>  
                                         
                                 </div>
                                 <div class="skin-scanner-bottom-image">
@@ -709,7 +711,7 @@
                     </div>
                     <div class="iconos-last-next" >
                         <div class="last-page">
-                            <a href="#" onclick="showPreviousPage(14)">
+                            <a href="#" onclick="showPreviousPage(13)">
                                 <i class="fa-solid fa-arrow-left"></i>
                             </a>
                         </div>
@@ -736,18 +738,19 @@
                     <div class="scanner-text-input-part">
                         <div class="skin-scanner-left-column-mobile">
                             <h2 class="question"><strong>We`re analyzing your sun damage!</strong></h2><br>
-                            <div class="circle-container" id="circle-container1">
+                            <div class="circle-container">
                                 <svg class="circle" width="200" height="200" viewBox="0 0 100 100">
-                                    <circle class="progress-ring-circle1" style="stroke: #707CEC;"    cx="50" cy="50" r="40"></circle>
+                                    <circle class="progress-ring-circle1" stroke="#707CEC"  cx="50" cy="50" r="40"></circle>
                                 </svg>
+                            
                                 <div class="percentage" id="percentage1">0%</div>
                             </div>
                             
                              
                         </div>
-                        <div class="skin-scanner-center-column-mobile">
+                        <div class="skin-scanner-center-column" >
                             <div class="skin-scanner-image-container">
-        
+    
                                 <div class="scanner-trans-bottom-image">
                                     <div class="scanner-container">
                                         <div class="bottom-image">
@@ -760,32 +763,31 @@
                                 </div>
                                 <div class="scanner-trans-top-image">
                                     <div class="scanner-container" style="z-index: 5;">
-                                        <svg width="352" height="570" viewBox="0 0 352 570" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect width="352" height="570" rx="176" fill="url(#paint0_linear_9_231)" fill-opacity="0.28"/>
+                                        <svg  width="352" height="570" viewBox="0 0 352 570" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="352" height="550" rx="176" fill="url(#paint0_linear_9_231)" fill-opacity="0.28"/>
                                             <defs>
                                             <linearGradient id="paint0_linear_9_231" x1="176" y1="0" x2="176" y2="570" gradientUnits="userSpaceOnUse">
                                             <stop stop-color="#707CEC"/>
-                                            <stop offset="1" stop-color="#707CEC" stop-opacity="0.27"/>
+                                            <stop offset="1" stop-color="#707CEC" stop-opacity="0"/>
                                             </linearGradient>
                                             </defs>
                                         </svg>
                                         <div class="scanner2"></div>
                                         <div class="vertical-line2"></div>
-        
+    
                                     </div>
                                 </div>
                             </div>
                         </div>
-                            <div class="skin-scanner-right-column-mobile">
-                                <div class="skin-scanner-rigth-column-text" style="padding: 20px;
-                                width: 380px;margin-top:-100px;margin-right: -50px;">
-                                    <h2 class="question">Did you know that men, on a <strong>basic level, have slightly more sun-resistant skin than women?</strong> <br> <br>However, the most serious melanomas tend to be in men, and the regular check-up is the lack of sunscreen use and the refusal to go for annual check-ups.</h2>
-                                </div>
+                        <div class="skin-scanner-rigth-column-text" style="padding: 20px;
+                        width: 380px;margin-top:30px;margin-right: -100px;">
+                            <h2 class="question">Did you know that men, on a <strong>basic level, have slightly more sun-resistant skin than women?</strong> <br> <br>However, the most serious melanomas tend to be in men, and the regular check-up is the lack of sunscreen use and the refusal to go for annual check-ups.</h2>
+                        </div>
                             </div>
                         </div>
                     </div>
                 </div>
-        
+    
             </div>
         </div>
 
@@ -814,7 +816,7 @@
                                         
                     <div class="iconos-last-next"  >
                         <div class="last-page">
-                            <a href="#" onclick="showPreviousPage(13)">
+                            <a href="#" onclick="showPreviousPage(15)">
                                 <i class="fa-solid fa-arrow-left"></i>
                             </a>
                         </div>

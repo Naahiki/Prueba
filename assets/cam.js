@@ -2,51 +2,54 @@ function iniciarCamara(containerId, videoId) {
   const container = document.getElementById(containerId);
   const videoElement = document.createElement('video');
   videoElement.setAttribute('id', videoId);
+  videoElement.setAttribute('playsinline', '');
   videoElement.setAttribute('autoplay', true);
   container.appendChild(videoElement);
 
   navigator.mediaDevices.getUserMedia({ video: true })
-    .then(function (stream) {
-      videoElement.srcObject = stream;
-    })
-    .catch(function (error) {
-      console.error("Error al acceder a la cámara:", error);
-    });
+      .then(function (stream) {
+          videoElement.srcObject = stream;
+      })
+      .catch(function (error) {
+          console.error("Error al acceder a la cámara:", error);
+      });
+}
+
+function startVideo() {
+  navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function (stream) {
+          const videoElement = document.getElementById('liveVideo');
+          videoElement.srcObject = stream;
+          videoElement.play();
+      })
+      .catch(function (error) {
+          console.error("Error al acceder a la cámara:", error);
+      });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   const page5 = document.querySelector('.page-5');
 
   const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Página visible, solicitar permiso para acceder a la cámara
-        navigator.mediaDevices.getUserMedia({ video: true })
-          .then(function (stream) {
-            // Permisos otorgados, almacenar esta información en el localStorage
-            localStorage.setItem("cameraPermissionGranted", true);
-
-            // Iniciar las cámaras en los contenedores correspondientes
-            iniciarCamara('cameraContainer1', 'cameraFeed1');
-            iniciarCamara('cameraContainer3', 'cameraFeed3');
-            iniciarCamara('cameraContainer5', 'cameraFeed5');
-          })
-          .catch(function (error) {
-            // Permisos denegados, manejar este caso
-            localStorage.setItem("cameraPermissionGranted", false);
-            console.error("El usuario denegó el acceso a la cámara:", error);
-
-            // Aquí puedes mostrar un mensaje al usuario o realizar otra acción apropiada
-          });
-      }
-    });
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              navigator.mediaDevices.getUserMedia({ video: true })
+                  .then(function (stream) {
+                      localStorage.setItem("cameraPermissionGranted", true);
+                      iniciarCamara('cameraContainer1', 'cameraFeed1');
+                      iniciarCamara('cameraContainer3', 'cameraFeed3');
+                      iniciarCamara('cameraContainer5', 'cameraFeed5');
+                  })
+                  .catch(function (error) {
+                      localStorage.setItem("cameraPermissionGranted", false);
+                      console.error("El usuario denegó el acceso a la cámara:", error);
+                  });
+          }
+      });
   });
 
   observer.observe(page5);
 });
-
-
-
 
 
 
