@@ -442,22 +442,24 @@ font-size: 85%;
 .options-select {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 90%;
-  margin-left: -25%;
-  text-align: left;
-  
+
 }
 .column0{
-  width: 90%;
+  width: 100%;
+  margin-bottom: 0%;
+
 }
 
 .column1{
-  width: 90%;
+  width: 100%;
+  margin-left: 0%;
+  margin-bottom: 30%;
+
+
+  
 }
 
-.options-select option {
+.options-select button {
 font-size: 25px;
 width: 90%;
 }
@@ -466,8 +468,8 @@ width: 90%;
 
 
 .column1 > textarea[type="other-text"] {
-margin-left: 10%;
-width: 80%;
+width: 65%;
+margin-left: 0;
 }
 
 #emailForm {
