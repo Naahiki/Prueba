@@ -805,10 +805,10 @@
                             <h2 class="question"><strong>How often do you apply sunscreen?</strong></h2>
                         </div>
                         <div class="skyn-damage-select">
-                            <option >Every day</option>
-                            <option >When it's very sunny</option>
-                            <option >When I go to the beach or on a trip</option>
-                            <option>Never</option>
+                            <button class="option-button" value="Every day">Every day</button>
+                            <button class="option-button" value="When it's very sunny">When it's very sunny</button>
+                            <button class="option-button" value="When I go to the beach or on a trip">When I go to the beach or on a trip</button>
+                            <button class="option-button" value="Never">Never</button>
                         </div>
                     </div>
                     
@@ -887,21 +887,22 @@
 
                         </div>
                         <div class="options-select">
-                            <div class="column" id="column1">
-                                <option class="option" style="margin: 0px 25px;" onclick="toggleActive4(this)">Solar damage</option>
-                                <option class="option" onclick="toggleActive4(this)">Wrinkles</option>
-                                <option class="option" onclick="toggleActive4(this)">Blemishes</option>
-                                <option class="option" onclick="toggleActive4(this)">Dark circles</option>
-                                <option class="option" onclick="toggleActive4(this)">Dryness</option>
+                            <div class="column0">
+                                <button class="option"  onclick="toggleActive4(this)">Solar damage</button>
+                                <button class="option" onclick="toggleActive4(this)">Wrinkles</button>
+                                <button class="option" onclick="toggleActive4(this)">Blemishes</button>
+                                <button class="option" onclick="toggleActive4(this)">Dark circles</button>
+                                <button class="option" onclick="toggleActive4(this)">Dryness</button>
                             </div>
-                          <div class="column2" id="column2">
-                                <option class="option" style="margin: 0px 25px;" onclick="toggleActive4(this)">Oiliness</option>
-                                <option class="option" onclick="toggleActive4(this)">Premature ageing</option>
-                                <option class="option" onclick="toggleActive4(this)">Redness</option>
-                                <option class="option" onclick="toggleActive4(this)">Breakouts</option>
-                                <option class="option" onclick="toggleActive4(this)">Flaking</option>
-                          </div>
+                            <div class="column1">
+                                <button class="option"  onclick="toggleActive4(this)">Oiliness</button>
+                                <button class="option" onclick="toggleActive4(this)">Premature ageing</button>
+                                <button class="option" onclick="toggleActive4(this)">Redness</button>
+                                <button class="option" onclick="toggleActive4(this)">Breakouts</button>
+                                <button class="option" onclick="toggleActive4(this)">Flaking</button>
+                            </div>
                         </div>
+                        
                     </div>    
                         <div class="iconos-last-next " >
                             <div class="last-page">
@@ -936,20 +937,19 @@
                         <div class="other-wrapper-content-question" style="width: 260px;">
                             <h2 class="question"> <strong>Do you have any other personal care concerns?</strong> </h2>
                         </div>
-                        <div class="options-select" >
-                            <div class="column" >
-                                <option class="option0" style="margin: 0px 25px;" onclick="toggleActive5(this)">Acne and body cysts</option>
-                                <option class="option0" onclick="toggleActive5(this)">Hair loss</option>
-                                <option class="option0" onclick="toggleActive5(this)">Lack of energy</option>
-                                <option class="option0" onclick="toggleActive5(this)">Body hair removal</option>
-                                <option class="option0" onclick="toggleActive5(this)">Testosterone</option>
+                        <div class="options-select">
+                            <div class="column0">
+                                <button class="option0"  onclick="toggleActive5(this)">Acne and body cysts</button>
+                                <button class="option0" onclick="toggleActive5(this)">Hair loss</button>
+                                <button class="option0" onclick="toggleActive5(this)">Lack of energy</button>
+                                <button class="option0" onclick="toggleActive5(this)">Body hair removal</button>
+                                <button class="option0" onclick="toggleActive5(this)">Testosterone</button>
                             </div>
-                            <div class="column">
-                                <option class="option0" style="margin: 0px 25px;" onclick="toggleActive5(this)">Other</option>
-                                <textarea style="border: 1px solid rgba(87, 60, 65, 1);" type="other-text" id="text" name="input-text" placeholder="Tell us more about your concerns ..."></textarea>
-    
-                            </div>
+                            <div class="column1">
+                                <button class="option0" onclick="toggleActive5(this)">Other</button>
+                                <textarea style="border: 1px solid rgba(87, 60, 65, 1);" type="other-text" id="text" name="input-text" placeholder="Tell us more about your concerns ..."></textarea>                            </div>
                         </div>
+                        
                         
                     </div>
                         <div class="iconos-last-next"  >
@@ -1019,21 +1019,22 @@
  
                     </div>
                     <div class="options-select">
-                        <div class="column">
-                            <option class="option1" style="margin:0px 25px;" onclick="toggleActive6(this)">Internet search</option>
-                            <option class="option1" onclick="toggleActive6(this)">Recommendation</option>
-                            <option class="option1" onclick="toggleActive6(this)">Facebook</option>
-                            <option class="option1" onclick="toggleActive6(this)">Instagram</option>
-                            <option class="option1" onclick="toggleActive6(this)">Tiktok</option>
+                        <div class="column0">
+                            <button class="option1" onclick="toggleActive6(this)">Internet search</button>
+                            <button class="option1" onclick="toggleActive6(this)">Recommendation</button>
+                            <button class="option1" onclick="toggleActive6(this)">Facebook</button>
+                            <button class="option1" onclick="toggleActive6(this)">Instagram</button>
+                            <button class="option1" onclick="toggleActive6(this)">Tiktok</button>
                         </div>
-                        <div class="column">
-                            <option class="option1" style="margin:0px 25px;" onclick="toggleActive6(this)">YouTube</option>
-                            <option class="option1" onclick="toggleActive6(this)">Influencer</option>
-                            <option class="option1" onclick="toggleActive6(this)">Press or blog</option>
-                            <option class="option1" onclick="toggleActive6(this)">Amazon</option>
-                            <option class="option1" onclick="toggleActive6(this)">Other</option>
+                        <div class="column1">
+                            <button class="option1" onclick="toggleActive6(this)">YouTube</button>
+                            <button class="option1" onclick="toggleActive6(this)">Influencer</button>
+                            <button class="option1" onclick="toggleActive6(this)">Press or blog</button>
+                            <button class="option1" onclick="toggleActive6(this)">Amazon</button>
+                            <button class="option1" onclick="toggleActive6(this)">Other</button>
                         </div>
                     </div>
+                    
                     
                 </div>
                 <div class="iconos-last-next">

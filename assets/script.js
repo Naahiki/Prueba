@@ -597,7 +597,7 @@ function closeCustomAlert() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const options3 = document.querySelectorAll('.skyn-damage-select option');
+  const options3 = document.querySelectorAll('.skyn-damage-select button');
   
   options3.forEach((option1) => {
     option1.addEventListener('click', function() {
@@ -614,7 +614,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function validateSelectionThree() {
-    const selectedOptions3 = document.querySelectorAll('.skyn-damage-select option.active');
+    const selectedOptions3 = document.querySelectorAll('.skyn-damage-select button.active');
 
     if (selectedOptions3.length !== 1) {
       showCustomAlert(); 

@@ -376,7 +376,7 @@ font-size: 85%;
 
 .skyn-age-select button{
   font-size: 25px;
-    width: 90%;
+    width: 100%;
     margin:15px;
 }
 
@@ -401,11 +401,12 @@ font-size: 85%;
   width: 100%;
   margin:15px;
   text-align: left;
+  margin-bottom: 25%;
 }
 
-.skyn-damage-select option {
+.skyn-damage-select button {
   font-size: 25px;
-  width: 80%;
+  width: 100%;
   overflow: scroll;
   margin:15px;
 
@@ -448,11 +449,11 @@ font-size: 85%;
   text-align: left;
   
 }
-.column{
+.column0{
   width: 90%;
 }
 
-.column2{
+.column1{
   width: 90%;
 }
 
@@ -461,14 +462,10 @@ font-size: 25px;
 width: 90%;
 }
 
-.column2:nth-child(1){
-  font-size: 25px;
-  width: 90%;
-  margin:0px;
-}
 
 
-.column > textarea[type="other-text"] {
+
+.column1 > textarea[type="other-text"] {
 margin-left: 10%;
 width: 80%;
 }
