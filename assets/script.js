@@ -540,7 +540,7 @@ function closeCustomAlert2() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const options2 = document.querySelectorAll('.skyn-age-select option');
+  const options2 = document.querySelectorAll('.skyn-age-select button');
 
   options2.forEach((option) => {
     option.addEventListener('click', function() {
@@ -557,7 +557,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function validateSelectionThree() {
-    const selectedOptions = document.querySelectorAll('.skyn-age-select option.active');
+    const selectedOptions = document.querySelectorAll('.skyn-age-select button.active');
 
     if (selectedOptions.length !== 1) {
       showCustomAlert2(); 

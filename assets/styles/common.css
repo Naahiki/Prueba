@@ -1127,7 +1127,7 @@ font-weight: bold;
 }
 
 
-.skyn-age-select option {
+.skyn-age-select button {
 font-family: 'Sofia Sans', sans-serif;
 font-size: 30px;
 line-height: 40px;
@@ -1139,10 +1139,11 @@ padding: 15px;
 transition: 0.2s;
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 margin: 25px 0px;
+background-color: transparent;
 }
 
 
-  .skyn-age-select option:hover, .skyn-age-select option.active{
+  .skyn-age-select button:hover, .skyn-age-select button.active{
     background-color: #47D36F;
     color:black;
   }
