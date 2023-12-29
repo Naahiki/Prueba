@@ -29,7 +29,13 @@
     height: 100%;
     object-fit: cover; 
     transform: scaleX(-1); 
-    filter: grayscale(100%) contrast(150%) brightness(80%) sepia(10%);    
+    /* filter: grayscale(100%) contrast(150%) brightness(80%) sepia(10%);     */
+    /* CSS equivalente a los ajustes de Photoshop */
+    filter: grayscale(100%) brightness(106%) contrast(200%) brightness(105%) hue-rotate(100deg);
+/* Para los blancos y negros no hay una directiva específica en CSS, pero se pueden ajustar en la imagen original */
+
+/* No hay una propiedad directa para "textura" en CSS, pero puedes ajustar la nitidez o el desenfoque según lo que desees. */
+
 }
 
 
