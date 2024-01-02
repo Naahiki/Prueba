@@ -152,8 +152,8 @@ function captureAndShowImage1() {
         canvas.width = maxWidth;
         canvas.height = maxWidth / aspectRatio;
       } else {
-        canvas.height = maxHeight;
         canvas.width = maxHeight * aspectRatio;
+        canvas.height = maxHeight;
       }
     } else {
       canvas.width = videoElement.videoWidth;
@@ -180,6 +180,7 @@ function captureAndShowImage1() {
   const nextPage2 = document.querySelector('.page-10');
   nextPage2.style.display = 'block';
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const nextPageIcon = document.getElementById('nextPageIcon2');
