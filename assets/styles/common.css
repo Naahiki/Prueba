@@ -102,7 +102,14 @@ h2.question strong {
   color: black;
 }
 
-
+.question-analisis{
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 400;
+  color: black;
+  text-align: left
+}
 
 /* COMMON STYLES-Intro */
 
@@ -390,6 +397,7 @@ h2.question strong {
   width: 270px;
 
 }
+
 
 
 
@@ -1204,18 +1212,61 @@ margin-top:100px;
 
 /* ICONS-PAGES */
 
+
+
+
+.done-pages{
+  display: flex;
+}
 .done-pages-big-icon{
-  position: absolute;
+ 
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    width: 82.07%;
+    padding-right: 3rem;
+    padding-left: 13.5rem;
+ 
+}
+
+
+.done-pages-big-icon svg{
+
+    box-sizing: border-box;
+    display: block;
+    max-width: initial;
+
+ 
 }
 
 .done-common-wrapper-content-question{
-  width: 240px;
-  position: absolute;
-  bottom:60%;
-  left: 50px;
+  
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    width: 17.93%;
+    padding-top: 0.25rem;
+    padding-bottom: 13.5rem;
+    padding-left: 10rem;
+ 
+
 }
 
+.question-done {
+  
+    box-sizing: border-box;
+    max-width: 13.0625rem;
+    padding: 0;
+    margin: 0;
+    color: black;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 400;
+    color: black;
+    text-align: left;
+    white-space: pre-wrap;
+ 
 
+}
 
 #transition-other-text{
   width: 350px;

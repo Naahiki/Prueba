@@ -252,7 +252,7 @@
                         <div class="solar-damage" id="solar-damage-mobile0"><p class="three-column-text" id="solar-damage-mobile-text0">SOLAR DAMAGE</p></div>
                     </div>
                     <div class="scanner-text-input-part">
-                        <div class="skin-scanner-left-column" style="width: 280px;">
+                        <div class="skin-scanner-left-column">
                             <h2 class="question"><strong>Let's take your first photo, and start to analyze your skin type.</strong></h2>
                         </div>
                         <div class="skin-scanner-center-column">
@@ -272,7 +272,10 @@
                                     <!-- <button  style="position: absolute; left: 10px;" onclick="startVideo()">Iniciar Video</button> -->
  
                                 </div>
+                                <button class="take-photo-mobile" id="take-photo-mobile0"></button>
+
                             </div>
+
                             
                         </div>
     
@@ -316,7 +319,7 @@
                     </div>
                     <div class="scanner-text-input-part">
                         <div class="skin-scanner-left-column-mobile">
-                            <h2 class="question"><strong>We`re analyzing your skin type!</strong></h2><br>
+                            <h2 class="question-analisis"><strong>We`re analyzing your skin type!</strong></h2><br>
                             <div class="circle-container">
                                 <svg class="circle" width="200" height="200" viewBox="0 0 100 100">
                                     <circle class="progress-ring-circle" cx="50" cy="50" r="40"></circle>
@@ -327,7 +330,7 @@
                             
                              
                         </div>
-                        <div class="skin-scanner-center-column">
+                        <div class="skin-scanner-center-column" id="mobile-version">
                             <div class="skin-scanner-image-container">
     
                                 <div class="scanner-trans-bottom-image">
@@ -440,28 +443,24 @@
         <div class="page-8" style="display: none;">
             <div class="common-body">
                 <div class="common-body-wrapper-content">
-                      <div class="common-text-input-part">
-                          <div class="done-common-wrapper-content-question">
-                              <h2 class="question" style="margin-left:50px;"><strong>DONE!</strong> You’re doing great!</h2>
-                          </div>
-                      </div>
-      
-                      <div class="done-pages-big-icon">
-                          
+                      
+                    <div class="done-common-wrapper-content-question" >
+                        <h2 class="question-done"><strong>DONE!</strong> You’re doing great!</h2>
+                    </div>
+                      
+                    <div class="done-pages-big-icon" >
+                        <a>
                             <svg  width="414" height="414" viewBox="0 0 314 314" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M157 266.9C217.696 266.9 266.9 217.696 266.9 157C266.9 96.304 217.696 47.1001 157 47.1001C96.3039 47.1001 47.1 96.304 47.1 157C47.1 217.696 96.3039 266.9 157 266.9ZM157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6267 7.8501 7.85001 74.6268 7.85001 157C7.85001 239.373 74.6267 306.15 157 306.15Z" fill="#573C41"/>
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6267 7.8501 7.85001 74.6268 7.85001 157C7.85001 239.373 74.6267 306.15 157 306.15ZM157 266.945C96.2789 266.945 47.0547 217.721 47.0547 157C47.0547 96.279 96.2789 47.0548 157 47.0548C217.721 47.0548 266.945 96.279 266.945 157C266.945 217.721 217.721 266.945 157 266.945Z" fill="#DBF22E"/>
                                 <path d="M103.598 158.828L138.513 193.742L216.35 115.906" stroke="#DBF22E" stroke-width="8"/>
                             </svg>
-                          
-                      </div>
-                  </div>
+                        </a>
+                    </div>
+                  
                 </div>
-              
+            </div>
         </div>
-              
-        </div>
-
 
         <div class="page-9" style="display: none;">
             <div class="common-body">
@@ -481,8 +480,6 @@
                                 <div class="emoji1" >
                                     <img src="../../images/emoticonos/Emoticonos-01.png" alt="emoji">
                                     <p>SMILE!</p>
-        
-                                    
                                 </div>
                                 <div class="skin-scanner-image-container">
                                     <div class="bottom-image">
@@ -494,6 +491,8 @@
                                     <div class="top-image">
                                         <img class="superimposed-image" src="../../images/scanner/cruzBlanca.png" alt="cruz"> 
                                     </div>
+                                    <button class="take-photo-mobile" id="take-photo-mobile1"></button>
+
                                 </div>
                             </div>
                         </div>
@@ -537,7 +536,7 @@
                     </div>
                     <div class="scanner-text-input-part">
                         <div class="skin-scanner-left-column-mobile">
-                            <h2 class="question"><strong>We`re analizing your expression lines!</strong></h2><br>
+                            <h2 class="question-analisis"><strong>We`re analizing your expression lines!</strong></h2><br>
                             <div class="circle-container">
                                 <svg class="circle" width="200" height="200" viewBox="0 0 100 100">
                                     <circle class="progress-ring-circle0" stroke="#47D36F"   cx="50" cy="50" r="40"></circle>
@@ -548,7 +547,7 @@
                             
                              
                         </div>
-                        <div class="skin-scanner-center-column" >
+                        <div class="skin-scanner-center-column" id="mobile-version0" >
                             <div class="skin-scanner-image-container">
     
                                 <div class="scanner-trans-bottom-image">
@@ -641,21 +640,20 @@
         <div class="page-12" style="display: none;">
             <div class="common-body">
                 <div class="common-body-wrapper-content">
-                      <div class="common-text-input-part">
-                          <div class="done-common-wrapper-content-question" >
-                              <h2 class="question" style="margin-left:50px;"><strong>DONE!</strong> Let’s continue.</h2>
-                          </div>
-                      </div>
-      
-                      <div class="done-pages-big-icon" >
-                          <a>
-                              <svg  width="414" height="414" viewBox="0 0 314 314" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M157 266.9C217.696 266.9 266.9 217.696 266.9 157C266.9 96.304 217.696 47.1001 157 47.1001C96.3039 47.1001 47.1 96.304 47.1 157C47.1 217.696 96.3039 266.9 157 266.9ZM157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6267 7.8501 7.84998 74.6268 7.84998 157C7.84998 239.373 74.6267 306.15 157 306.15Z" fill="#573C41"/>
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6267 7.8501 7.84998 74.6268 7.84998 157C7.84998 239.373 74.6267 306.15 157 306.15ZM157 266.945C96.2788 266.945 47.0546 217.721 47.0546 157C47.0546 96.279 96.2788 47.0548 157 47.0548C217.721 47.0548 266.945 96.279 266.945 157C266.945 217.721 217.721 266.945 157 266.945Z" fill="#47D36F"/>
-                                  <path d="M103.598 158.828L138.513 193.742L216.35 115.906" stroke="#47D36F" stroke-width="8"/>
-                              </svg>
-                            </a>
-                      </div>
+                      
+                    <div class="done-common-wrapper-content-question" >
+                        <h2 class="question-done"><strong>DONE!</strong> Let’s continue.</h2>
+                    </div>
+                      
+                    <div class="done-pages-big-icon" >
+                        <a>
+                            <svg  width="414" height="414" viewBox="0 0 314 314" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M157 266.9C217.696 266.9 266.9 217.696 266.9 157C266.9 96.304 217.696 47.1001 157 47.1001C96.3039 47.1001 47.1 96.304 47.1 157C47.1 217.696 96.3039 266.9 157 266.9ZM157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6267 7.8501 7.84998 74.6268 7.84998 157C7.84998 239.373 74.6267 306.15 157 306.15Z" fill="#573C41"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6267 7.8501 7.84998 74.6268 7.84998 157C7.84998 239.373 74.6267 306.15 157 306.15ZM157 266.945C96.2788 266.945 47.0546 217.721 47.0546 157C47.0546 96.279 96.2788 47.0548 157 47.0548C217.721 47.0548 266.945 96.279 266.945 157C266.945 217.721 217.721 266.945 157 266.945Z" fill="#47D36F"/>
+                                <path d="M103.598 158.828L138.513 193.742L216.35 115.906" stroke="#47D36F" stroke-width="8"/>
+                            </svg>
+                        </a>
+                    </div>
                   
                 </div>
             </div>
@@ -691,6 +689,8 @@
                                 <div class="skin-scanner-bottom-image">
                                     <img class="superimposed-image" src="../../images/scanner/cruzBlanca.png" alt="cruz"> 
                                 </div>
+                                <button class="take-photo-mobile" id="take-photo-mobile2"></button>
+
                             </div>
                         </div>
                         <div class="skin-scanner-right-column">
@@ -734,7 +734,7 @@
                     </div>
                     <div class="scanner-text-input-part">
                         <div class="skin-scanner-left-column-mobile">
-                            <h2 class="question"><strong>We`re analyzing your sun damage!</strong></h2><br>
+                            <h2 class="question-analisis"><strong>We`re analyzing your sun damage!</strong></h2><br>
                             <div class="circle-container">
                                 <svg class="circle" width="200" height="200" viewBox="0 0 100 100">
                                     <circle class="progress-ring-circle1" stroke="#707CEC"  cx="50" cy="50" r="40"></circle>
@@ -745,7 +745,7 @@
                             
                              
                         </div>
-                        <div class="skin-scanner-center-column">
+                        <div class="skin-scanner-center-column" id="mobile-version1">
                             <div class="skin-scanner-image-container">
     
                                 <div class="scanner-trans-bottom-image">
@@ -841,21 +841,22 @@
         <div class="page-16" style="display: none;">
             <div class="common-body">
                 <div class="common-body-wrapper-content">
-                    <div class="common-text-input-part" >
+                   
                         <div class="done-common-wrapper-content-question" >
-                          <h2 class="question" style="margin-left:50px;"><strong>DONE!<br></strong>We are<br>almost<br>finishing.</h2>
+                            <h2 class="question-done"><strong>DONE!<br></strong>We are almost finishing.</h2>
                         </div>
-                    </div>
-      
-                    <div class="done-pages-big-icon" >
-                      <a>
-                          <svg  width="414" height="414" viewBox="0 0 314 314" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M157 266.9C217.696 266.9 266.9 217.696 266.9 157C266.9 96.304 217.696 47.1001 157 47.1001C96.304 47.1001 47.1001 96.304 47.1001 157C47.1001 217.696 96.304 266.9 157 266.9ZM157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6268 7.8501 7.8501 74.6268 7.8501 157C7.8501 239.373 74.6268 306.15 157 306.15Z" fill="#573C41"/>
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6268 7.8501 7.8501 74.6268 7.8501 157C7.8501 239.373 74.6268 306.15 157 306.15ZM157 266.945C96.279 266.945 47.0548 217.721 47.0548 157C47.0548 96.279 96.279 47.0548 157 47.0548C217.721 47.0548 266.945 96.279 266.945 157C266.945 217.721 217.721 266.945 157 266.945Z" fill="#707CEC"/>
-                              <path d="M103.598 158.828L138.513 193.742L216.35 115.906" stroke="#707CEC" stroke-width="8"/>
-                          </svg>
-                      </a>
-                  </div>
+                        
+        
+                        <div class="done-pages-big-icon" >
+                            <a>
+                                <svg  width="414" height="414" viewBox="0 0 314 314" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M157 266.9C217.696 266.9 266.9 217.696 266.9 157C266.9 96.304 217.696 47.1001 157 47.1001C96.304 47.1001 47.1001 96.304 47.1001 157C47.1001 217.696 96.304 266.9 157 266.9ZM157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6268 7.8501 7.8501 74.6268 7.8501 157C7.8501 239.373 74.6268 306.15 157 306.15Z" fill="#573C41"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M157 306.15C239.373 306.15 306.15 239.373 306.15 157C306.15 74.6268 239.373 7.8501 157 7.8501C74.6268 7.8501 7.8501 74.6268 7.8501 157C7.8501 239.373 74.6268 306.15 157 306.15ZM157 266.945C96.279 266.945 47.0548 217.721 47.0548 157C47.0548 96.279 96.279 47.0548 157 47.0548C217.721 47.0548 266.945 96.279 266.945 157C266.945 217.721 217.721 266.945 157 266.945Z" fill="#707CEC"/>
+                                    <path d="M103.598 158.828L138.513 193.742L216.35 115.906" stroke="#707CEC" stroke-width="8"/>
+                                </svg>
+                            </a>
+                        </div>
+                    
               </div>
             </div>     
               

@@ -75,176 +75,224 @@ function rejectAccess() {
 } 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Muestra el fondo de desenfoque al cargar la página
+document.addEventListener('DOMContentLoaded', function () {
+  const takePhotoMobileBtn = document.getElementById('take-photo-mobile0');
+  const nextPageIcon = document.getElementById('nextPageIcon');
+
   const blurBackground = document.getElementById('blurBackground');
   blurBackground.style.display = 'block';
 
-  // Muestra la alerta al cargar la página
   const alertModal = document.getElementById('alertModal');
   alertModal.style.display = 'block';
-  const nextPageIcon = document.getElementById('nextPageIcon');
+
+  function captureAndShowImage() {
+    const videoElement = document.getElementById("cameraFeed1");
+    const canvas = document.createElement("canvas");
+    const maxWidth = 1920;
+    const maxHeight = 1080;
+    const aspectRatio = videoElement.videoWidth / videoElement.videoHeight;
+
+    if (videoElement.videoWidth > maxWidth) {
+      canvas.width = maxWidth;
+      canvas.height = maxWidth / aspectRatio;
+    } else if (videoElement.videoHeight > maxHeight) {
+      canvas.height = maxHeight;
+      canvas.width = maxHeight * aspectRatio;
+    } else {
+      canvas.width = videoElement.videoWidth;
+      canvas.height = videoElement.videoHeight;
+    }
+
+    const context = canvas.getContext('2d');
+    context.imageSmoothingEnabled = true;
+    context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+    const capturedImage = canvas.toDataURL('image/jpeg', 1.0);
+
+    const currentPage = document.querySelector('.page-5');
+    currentPage.style.display = 'none';
+
+    const capturedImageContainer = document.getElementById('cameraContainer2');
+    const capturedImageContainer3 = document.getElementById('cameraContainerResults');
+
+    capturedImageContainer.innerHTML = `<img src="${capturedImage}" alt="Captured Image">`;
+    capturedImageContainer3.innerHTML = `<img src="${capturedImage}" alt="Captured Image">`;
+
+    localStorage.setItem('capturedImage', capturedImage);
+
+    const nextPage = document.querySelector('.page-6');
+    nextPage.style.display = 'block';
+  }
+
+  takePhotoMobileBtn.addEventListener('click', function(event) {
+    const computedStyle = window.getComputedStyle(takePhotoMobileBtn);
+    const displayValue = computedStyle.getPropertyValue('display');
+
+    if (displayValue === 'block') {
+      event.preventDefault();
+      captureAndShowImage();
+    }
+  });
+
+  nextPageIcon.addEventListener('click', function(event) {
+    const computedStyle = window.getComputedStyle(takePhotoMobileBtn);
+    const displayValue = computedStyle.getPropertyValue('display');
+
+    if (displayValue === 'block') {
+      event.preventDefault();
+    } else {
+      captureAndShowImage();
+    }
+  });
+
   nextPageIcon.addEventListener('click', captureAndShowImage);
 });
 
-function captureAndShowImage() {
-  // Captura la imagen del video
-  const videoElement = document.getElementById("cameraFeed1");
-  const canvas = document.createElement("canvas");
-  const maxWidth = 1920; // Establecer un ancho máximo para el canvas
-  const maxHeight = 1080; // Establecer una altura máxima para el canvas
-  const aspectRatio = videoElement.videoWidth / videoElement.videoHeight;
-
-  if (videoElement.videoWidth > maxWidth) {
-    canvas.width = maxWidth;
-    canvas.height = maxWidth / aspectRatio;
-  } else if (videoElement.videoHeight > maxHeight) {
-    canvas.height = maxHeight;
-    canvas.width = maxHeight * aspectRatio;
-  } else {
-    canvas.width = videoElement.videoWidth;
-    canvas.height = videoElement.videoHeight;
-  }
-
-  const context = canvas.getContext('2d');
-  // Ajustar la calidad de la imagen capturada
-  context.imageSmoothingEnabled = true;
-  context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-
-  // Obtener la imagen en formato de alta calidad (mejora la calidad del JPEG)
-  const capturedImage = canvas.toDataURL('image/jpeg', 1.0); // Cambiado a 'image/jpeg' con calidad máxima
-
-  // Oculta la página actual
-  const currentPage = document.querySelector('.page-5');
-  currentPage.style.display = 'none';
-
-  // Asigna la imagen capturada al div oculto
-  const capturedImageContainer = document.getElementById('cameraContainer2');
-  const capturedImageContainer3 = document.getElementById('cameraContainerResults');
-
-  // Asigna la imagen a ambos contenedores después de ocultar la página
-  capturedImageContainer.innerHTML = `<img src="${capturedImage}" alt="Captured Image">`;
-  capturedImageContainer3.innerHTML = `<img src="${capturedImage}" alt="Captured Image">`;
-
-  // Almacena la imagen capturada en localStorage si es necesario
-  localStorage.setItem('capturedImage', capturedImage);
-
-  // Muestra la siguiente página
-  const nextPage = document.querySelector('.page-6');
-  nextPage.style.display = 'block';
-}
 
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const takePhotoMobileBtn1 = document.getElementById('take-photo-mobile1');
+  const nextPageIcon2 = document.getElementById('nextPageIcon2');
 
-function captureAndShowImage1() {
-  const videoElement = document.getElementById("cameraFeed3");
-  const canvas = document.createElement("canvas");
-  const maxWidth = 1920; // Ancho máximo para el canvas
-  const maxHeight = 1080; // Altura máxima para el canvas
-  const aspectRatio = videoElement.videoWidth / videoElement.videoHeight;
-  const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  function captureAndShowImage1() {
+    const videoElement = document.getElementById("cameraFeed3");
+    const canvas = document.createElement("canvas");
+    const maxWidth = 1920;
+    const maxHeight = 1080;
+    const aspectRatio = videoElement.videoWidth / videoElement.videoHeight;
+    const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-  if (iOS) {
-    if (videoElement.videoWidth > maxWidth || videoElement.videoHeight > maxHeight) {
-      if (videoElement.videoWidth / videoElement.videoHeight > maxWidth / maxHeight) {
-        canvas.width = maxWidth;
-        canvas.height = maxWidth / aspectRatio;
+    if (iOS) {
+      if (videoElement.videoWidth > maxWidth || videoElement.videoHeight > maxHeight) {
+        if (videoElement.videoWidth / videoElement.videoHeight > maxWidth / maxHeight) {
+          canvas.width = maxWidth;
+          canvas.height = maxWidth / aspectRatio;
+        } else {
+          canvas.height = maxHeight;
+          canvas.width = maxHeight * aspectRatio;
+        }
       } else {
-        canvas.width = maxHeight * aspectRatio;
-        canvas.height = maxHeight;
+        canvas.width = videoElement.videoWidth;
+        canvas.height = videoElement.videoHeight;
       }
     } else {
       canvas.width = videoElement.videoWidth;
       canvas.height = videoElement.videoHeight;
     }
-  } else {
-    canvas.width = videoElement.videoWidth;
-    canvas.height = videoElement.videoHeight;
+
+    const context = canvas.getContext('2d');
+    context.imageSmoothingEnabled = true;
+    context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+    const capturedImage1 = canvas.toDataURL('image/jpeg', 1.0);
+    localStorage.setItem('capturedImage1', capturedImage1);
+
+    const capturedImageContainer = document.getElementById('cameraContainer4');
+    capturedImageContainer.innerHTML = `<img src="${capturedImage1}" alt="Captured Image">`;
+
+    const currentPage2 = document.querySelector('.page-9');
+    currentPage2.style.display = 'none';
+
+    const nextPage2 = document.querySelector('.page-10');
+    nextPage2.style.display = 'block';
   }
 
-  const context = canvas.getContext('2d');
-  context.imageSmoothingEnabled = true;
-  context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+  takePhotoMobileBtn1.addEventListener('click', function(event) {
+    const computedStyle1 = window.getComputedStyle(takePhotoMobileBtn1);
+    const displayValue1 = computedStyle1.getPropertyValue('display');
 
-  const capturedImage1 = canvas.toDataURL('image/jpeg', 1.0);
-  localStorage.setItem('capturedImage1', capturedImage1);
+    if (displayValue1 === 'block') {
+      event.preventDefault();
+      captureAndShowImage1();
+    }
+  });
 
-  const capturedImageContainer = document.getElementById('cameraContainer4');
-  capturedImageContainer.innerHTML = `<img src="${capturedImage1}" alt="Captured Image">`;
+  nextPageIcon2.addEventListener('click', function(event) {
+    const computedStyle1 = window.getComputedStyle(takePhotoMobileBtn1);
+    const displayValue1 = computedStyle1.getPropertyValue('display');
 
-  const currentPage2 = document.querySelector('.page-9');
-  currentPage2.style.display = 'none';
+    if (displayValue1 === 'block') {
+      event.preventDefault();
+    } else {
+      captureAndShowImage1();
+    }
+  });
 
-  const nextPage2 = document.querySelector('.page-10');
-  nextPage2.style.display = 'block';
-}
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const nextPageIcon = document.getElementById('nextPageIcon2');
-  nextPageIcon.addEventListener('click', captureAndShowImage1);
-
-  // Mostrar la imagen en la siguiente página si está disponible
   const imageData1 = localStorage.getItem('capturedImage1');
   if (imageData1) {
     const capturedImageContainer = document.getElementById('cameraContainer4');
     capturedImageContainer.innerHTML = `<img src="${imageData1}" alt="Captured Image">`;
   } else {
-    // Si no hay imagen almacenada, asegúrate de ocultar la página 10
     const nextPage2 = document.querySelector('.page-10');
     nextPage2.style.display = 'none';
   }
 });
 
 
-function captureAndShowImage3() {
-  // Captura la imagen del video
-  const videoElement = document.getElementById("cameraFeed5");
-  const canvas = document.createElement("canvas");
-  const maxWidth = 1920; // Ancho máximo para el canvas
-  const maxHeight = 1080; // Altura máxima para el canvas
-  const aspectRatio = videoElement.videoWidth / videoElement.videoHeight;
 
-  if (videoElement.videoWidth > maxWidth) {
-    canvas.width = maxWidth;
-    canvas.height = maxWidth / aspectRatio;
-  } else if (videoElement.videoHeight > maxHeight) {
-    canvas.height = maxHeight;
-    canvas.width = maxHeight * aspectRatio;
-  } else {
-    canvas.width = videoElement.videoWidth;
-    canvas.height = videoElement.videoHeight;
-  }
-
-  const context = canvas.getContext('2d');
-  // Ajustar la calidad de la imagen capturada
-  context.imageSmoothingEnabled = true;
-  context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-
-  // Obtener la imagen en formato de alta calidad (JPEG con máxima calidad)
-  const capturedImage3 = canvas.toDataURL('image/jpeg', 1.0); // Cambiado a 'image/jpeg' con calidad máxima
-  localStorage.setItem('capturedImage3', capturedImage3);
-
-  // Mostrar la imagen capturada en otra página HTML
-  const capturedImageElement = document.getElementById('capturedImage3');
-  capturedImageElement.src = capturedImage3;
-
-  // Redirigir a la siguiente página
-  const currentPage3 = document.querySelector('.page-13');
-  currentPage3.style.display = 'none';
-
-  // Mostrar la siguiente página
-  const nextPage3 = document.querySelector('.page-14');
-  nextPage3.style.display = 'block';
-}
 
 document.addEventListener('DOMContentLoaded', function () {
-  const nextPageIcon = document.getElementById('nextPageIcon3');
-  nextPageIcon.addEventListener('click', captureAndShowImage3);
+  const takePhotoMobileBtn2 = document.getElementById('take-photo-mobile2');
+  const nextPageIcon3 = document.getElementById('nextPageIcon3');
 
-  // Mostrar la imagen en la siguiente página si está disponible
+  function captureAndShowImage3() {
+    const videoElement = document.getElementById("cameraFeed5");
+    const canvas = document.createElement("canvas");
+    const maxWidth = 1920;
+    const maxHeight = 1080;
+    const aspectRatio = videoElement.videoWidth / videoElement.videoHeight;
+
+    if (videoElement.videoWidth > maxWidth) {
+      canvas.width = maxWidth;
+      canvas.height = maxWidth / aspectRatio;
+    } else if (videoElement.videoHeight > maxHeight) {
+      canvas.height = maxHeight;
+      canvas.width = maxHeight * aspectRatio;
+    } else {
+      canvas.width = videoElement.videoWidth;
+      canvas.height = videoElement.videoHeight;
+    }
+
+    const context = canvas.getContext('2d');
+    context.imageSmoothingEnabled = true;
+    context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+    const capturedImage3 = canvas.toDataURL('image/jpeg', 1.0);
+    localStorage.setItem('capturedImage3', capturedImage3);
+
+    const capturedImageElement = document.getElementById('capturedImage3');
+    capturedImageElement.src = capturedImage3;
+
+    const currentPage3 = document.querySelector('.page-13');
+    currentPage3.style.display = 'none';
+
+    const nextPage3 = document.querySelector('.page-14');
+    nextPage3.style.display = 'block';
+  }
+
+  takePhotoMobileBtn2.addEventListener('click', function(event) {
+    const computedStyle2 = window.getComputedStyle(takePhotoMobileBtn2);
+    const displayValue2 = computedStyle2.getPropertyValue('display');
+
+    if (displayValue2 === 'block') {
+      event.preventDefault();
+      captureAndShowImage3();
+    }
+  });
+
+  nextPageIcon3.addEventListener('click', function(event) {
+    const computedStyle2 = window.getComputedStyle(takePhotoMobileBtn2);
+    const displayValue2 = computedStyle2.getPropertyValue('display');
+
+    if (displayValue2 === 'block') {
+      event.preventDefault();
+    } else {
+      captureAndShowImage3();
+    }
+  });
+
   const imageData3 = localStorage.getItem('capturedImage3');
   if (imageData3) {
     const capturedImageElement = document.getElementById('capturedImage3');
@@ -254,15 +302,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-const currentPage = document.querySelector('.page-22');
 
-if (currentPage) {
-    const capturedImage = localStorage.getItem('capturedImage');
+// document.addEventListener('DOMContentLoaded', function () {
+// const currentPage = document.querySelector('.page-22');
+
+// if (currentPage) {
+//     const capturedImage = localStorage.getItem('capturedImage');
     
+//     if (capturedImage) {
+//         const capturedImageContainer = document.getElementById('cameraContainerResults');
+//         capturedImageContainer.innerHTML = `<img src="${capturedImage}" alt="Captured Image">`;
+//     }
+// }
+// });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const currentPage = document.querySelector('.page-22');
+
+  if (currentPage) {
+    const capturedImage = localStorage.getItem('capturedImage');
+
     if (capturedImage) {
-        const capturedImageContainer = document.getElementById('cameraContainerResults');
-        capturedImageContainer.innerHTML = `<img src="${capturedImage}" alt="Captured Image">`;
+      const capturedImageContainer = document.getElementById('cameraContainerResults');
+      const img = new Image();
+
+      img.onload = function() {
+        capturedImageContainer.appendChild(img);
+      };
+
+      img.src = capturedImage;
     }
-}
+  }
 });
