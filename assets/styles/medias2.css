@@ -1,6 +1,6 @@
 
   /* Estilos base */
-  @media all and (max-width: 680px)    {
+  @media all and (max-width: 580px)    {
   .header{
     display: none;
   }
@@ -66,7 +66,7 @@
   }
 
   .common-wrapper-content-question {
-    padding: 10px 30px;
+    padding: 10px 10px;
     width: 90%;
     /* display: flex; */
     justify-content: center;
@@ -130,12 +130,11 @@ margin-left: 5%;
   justify-content: space-evenly;
   display: flex;
   flex-direction: column;
-  margin-top:10%;
 }
 
 .common-input-text input[type="text"] {
   width: 140%;
-  margin-left: -30%;
+  margin-left: -25%;
   font-size: 20px;
 
 }
@@ -156,25 +155,22 @@ margin-left: 5%;
 }
 
 #question-mobile{
-  padding: 10px;
-  width: 100%;
+  padding: 50px 0px 0px;
   text-align: left;
   margin-top: 5%;
 }
 
 #question-mobile0{
-  padding: 10px;
-  width: 100%;
+  /* padding: 10px; */
   text-align: left;
-  margin-top: 5%;
+  margin-top: 20%;
 }
 
 
 #question-mobile1{
-  padding: 10px;
-  width: 100%;
+  /* padding: 10px; */
   text-align: left;
-  margin-top: 5%;
+  margin-top: 20%;
 }
 
 #question-mobile2{
@@ -255,7 +251,7 @@ margin-left: 5%;
   position: absolute;
   top: 45%;
   left: 10%;
-  width: 90%;
+  width: 85%;
   margin: 25% 0%;
 }
 
@@ -336,9 +332,9 @@ font-size: 85%;
 
 .emoji2 p {
   position: absolute;
-  left: -160px;
+  left: -180px;
   width: 170px;
-  bottom: 100%;
+  bottom: 99%;
 }
 
 
@@ -352,6 +348,13 @@ font-size: 85%;
   margin-top: 80%;
   margin-bottom: 35%;
 }
+
+
+#solar-skin-scanner-right{
+  margin-top: 170px;
+
+}
+
 
 .skin-text-input-part {
   display: flex;
@@ -427,6 +430,7 @@ font-size: 85%;
   .other-wrapper-content-question {
     margin-right: 0px;
     padding: 20px;
+    width: 80%;
 }
 
 .small-lettering {
@@ -442,6 +446,8 @@ font-size: 85%;
 .options-select {
   display: flex;
   flex-direction: column;
+  margin-right: 0px;
+  margin-top:-3%;
 
 }
 .column0{
