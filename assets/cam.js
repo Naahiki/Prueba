@@ -139,42 +139,44 @@ function captureAndShowImage() {
 
 
 function captureAndShowImage1() {
-  // Captura la imagen del video
   const videoElement = document.getElementById("cameraFeed3");
   const canvas = document.createElement("canvas");
   const maxWidth = 1920; // Ancho máximo para el canvas
   const maxHeight = 1080; // Altura máxima para el canvas
   const aspectRatio = videoElement.videoWidth / videoElement.videoHeight;
+  const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-  if (videoElement.videoWidth > maxWidth) {
-    canvas.width = maxWidth;
-    canvas.height = maxWidth / aspectRatio;
-  } else if (videoElement.videoHeight > maxHeight) {
-    canvas.height = maxHeight;
-    canvas.width = maxHeight * aspectRatio;
+  if (iOS) {
+    if (videoElement.videoWidth > maxWidth || videoElement.videoHeight > maxHeight) {
+      if (videoElement.videoWidth / videoElement.videoHeight > maxWidth / maxHeight) {
+        canvas.width = maxWidth;
+        canvas.height = maxWidth / aspectRatio;
+      } else {
+        canvas.height = maxHeight;
+        canvas.width = maxHeight * aspectRatio;
+      }
+    } else {
+      canvas.width = videoElement.videoWidth;
+      canvas.height = videoElement.videoHeight;
+    }
   } else {
     canvas.width = videoElement.videoWidth;
     canvas.height = videoElement.videoHeight;
   }
 
   const context = canvas.getContext('2d');
-  // Ajustar la calidad de la imagen capturada
   context.imageSmoothingEnabled = true;
   context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
 
-  // Obtener la imagen en formato de alta calidad (JPEG con máxima calidad)
-  const capturedImage1 = canvas.toDataURL('image/jpeg', 1.0); // Cambiado a 'image/jpeg' con calidad máxima
+  const capturedImage1 = canvas.toDataURL('image/jpeg', 1.0);
   localStorage.setItem('capturedImage1', capturedImage1);
 
-  // Mostrar la imagen capturada en otro contenedor
   const capturedImageContainer = document.getElementById('cameraContainer4');
   capturedImageContainer.innerHTML = `<img src="${capturedImage1}" alt="Captured Image">`;
 
-  // Ocultar la página actual
   const currentPage2 = document.querySelector('.page-9');
   currentPage2.style.display = 'none';
 
-  // Mostrar la siguiente página
   const nextPage2 = document.querySelector('.page-10');
   nextPage2.style.display = 'block';
 }
