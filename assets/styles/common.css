@@ -621,20 +621,73 @@ margin-right: 120px;
 }
 
 .svg-image {
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
   border: 1px solid rgba(87, 60, 65, 1);
   border-radius: 50%;
   margin: 10px;
   width: 220px;
   height: 220px;
   transition: 0.2s;
+  background-size: 90%;
 }
 
 .svg-image:hover, .svg-image.active {
-border: 1px solid rgba(87, 60, 65, 1);
-box-shadow: -1px -1px 0px 8px #dbf22e inset;
-
+  border: 1px solid rgba(87, 60, 65, 1);
+  box-shadow: -1px -1px 0px 8px #dbf22e inset;
 }
+
+#botonimagen0{
+  background-image:url(../images/pages/iconos\ test\ de\ piel-01\ 1.svg);
+  background-repeat:no-repeat;
+  background-color: transparent;
+  background-position:center;
+  text-decoration: none;
+  
+}
+
+
+
+
+#botonimagen1{
+  background-image:url(../images/pages/iconos\ test\ de\ piel-01\ 2.svg);
+  background-repeat:no-repeat;
+  background-color: transparent;
+  background-position:center;
+  text-decoration: none;
+}
+
+
+
+
+
+#botonimagen2{
+  background-image:url(../images/pages/iconos\ test\ de\ piel-01\ 3.svg);
+  background-repeat:no-repeat;
+  background-color: transparent;
+  background-position:center;
+  text-decoration: none;
+}
+
+
+
+#botonimagen3{
+  background-image:url(../images/pages/iconos\ test\ de\ piel-01\ 4.svg);
+  background-repeat:no-repeat;
+  background-color: transparent;
+  background-position:center;
+  text-decoration: none;
+}
+
+
+#botonimagen4{
+  background-image:url(../images/pages/iconos\ test\ de\ piel-01\ 5.svg);
+  background-repeat:no-repeat;
+  background-color: transparent;
+  background-position:center;
+  text-decoration: none;
+}
+
+
 
 
 p.image-text{
@@ -1278,3 +1331,6 @@ margin-top:100px;
 /* ----------------------------------------------------- */
 
 
+.take-photo-mobile {
+  display: none;
+}

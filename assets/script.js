@@ -136,12 +136,16 @@ function showGreeting() {
   namePlaceholder.textContent = name;
   greeting.style.display = "block";
 
+  // Almacenar el nombre en localStorage si todo está bien
+  localStorage.setItem('userName', name);
+
   setTimeout(() => {
     document.getElementById('greeting').style.display = 'none';
     document.querySelector('.page-2').style.display = 'none'; // Oculta la página 2
     document.querySelector('.page-3').style.display = 'block'; // Muestra la página 3
-}, 2000);
+  }, 2000);
 }
+
 
 
 
@@ -151,49 +155,54 @@ document.addEventListener("DOMContentLoaded", function () {
   const birthdayInput = document.getElementById("birthdayInput");
 
   function isValidDate2(dateString) {
-      const regex = /^\d{2}\/\d{2}\/\d{4}$/;
-      if (!regex.test(dateString)) return false;
+    const regex = /^\d{2}\/\d{2}\/\d{4}$/;
+    if (!regex.test(dateString)) return false;
 
-      const [day, month, year] = dateString.split('/').map(Number);
-      const date = new Date(year, month - 1, day);
+    const [day, month, year] = dateString.split('/').map(Number);
+    const date = new Date(year, month - 1, day);
 
-      return (
-          date.getFullYear() === year &&
-          date.getMonth() === month - 1 &&
-          date.getDate() === day
-      );
+    return (
+      date.getFullYear() === year &&
+      date.getMonth() === month - 1 &&
+      date.getDate() === day
+    );
   }
 
   birthdayInput.addEventListener("input", function (event) {
-      let birthdayValue = event.target.value.trim().replace(/[^\d\/]/g, '');
+    let birthdayValue = event.target.value.trim().replace(/[^\d\/]/g, '');
 
-      if (birthdayValue.length > 2 && birthdayValue.charAt(2) !== '/') {
-          birthdayValue = `${birthdayValue.slice(0, 2)}/${birthdayValue.slice(2)}`;
-      }
-      if (birthdayValue.length > 5 && birthdayValue.charAt(5) !== '/') {
-          birthdayValue = `${birthdayValue.slice(0, 5)}/${birthdayValue.slice(5)}`;
-      }
-      if (birthdayValue.length > 10) {
-          birthdayValue = birthdayValue.slice(0, 10);
-      }
+    if (birthdayValue.length > 2 && birthdayValue.charAt(2) !== '/') {
+      birthdayValue = `${birthdayValue.slice(0, 2)}/${birthdayValue.slice(2)}`;
+    }
+    if (birthdayValue.length > 5 && birthdayValue.charAt(5) !== '/') {
+      birthdayValue = `${birthdayValue.slice(0, 5)}/${birthdayValue.slice(5)}`;
+    }
+    if (birthdayValue.length > 10) {
+      birthdayValue = birthdayValue.slice(0, 10);
+    }
 
-      event.target.value = birthdayValue;
+    event.target.value = birthdayValue;
   });
 
   document.getElementById("nextLink").addEventListener("click", function (event) {
-      const birthdayValue = birthdayInput.value.trim();
+    const birthdayValue = birthdayInput.value.trim();
 
-      if (!isValidDate2(birthdayValue)) {
-          birthdayInput.classList.add("error-border");
-          event.preventDefault();
-          // Puedes mostrar un mensaje de error aquí si lo deseas
-          return;
-      }
+    if (!isValidDate2(birthdayValue)) {
+      birthdayInput.classList.add("error-border");
+      event.preventDefault();
+      // Puedes mostrar un mensaje de error aquí si lo deseas
+      return;
+    }
 
-      birthdayInput.classList.remove("error-border");
-      showNextPage(3);
+    birthdayInput.classList.remove("error-border");
+
+    // Almacenar la fecha de cumpleaños en localStorage si es válida
+    localStorage.setItem('userBirthday', birthdayValue);
+
+    showNextPage(3);
   });
 });
+
 
 
 // Country-Page
@@ -229,8 +238,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => {
             console.error('Error fetching countries:', error);
         });
-}
-
+  }
 
   fetchCountries(); // Llamada a la función para cargar los países al cargar la página
 
@@ -245,6 +253,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
       countryInput.classList.remove("error-border");
 
+      // Almacenar la selección del país en localStorage
+      localStorage.setItem('userCountry', countryValue);
+
       const formContent = document.getElementById("transition-form-content0");
       formContent.style.display = "none";
 
@@ -254,11 +265,12 @@ document.addEventListener("DOMContentLoaded", function() {
       // Programa el avance automático a la siguiente página después de 5 segundos
       setTimeout(() => {
         document.getElementById('greeting').style.display = 'none';
-        document.querySelector('.page-4').style.display = 'none'; // Oculta la página 2
-        document.querySelector('.page-5').style.display = 'block'; // Muestra la página 3
+        document.querySelector('.page-4').style.display = 'none'; // Oculta la página 4
+        document.querySelector('.page-5').style.display = 'block'; // Muestra la página 5
     }, 2000);
   });
 });
+
 
 
 
@@ -280,6 +292,7 @@ document.addEventListener("DOMContentLoaded", function () {
   images.forEach((image) => {
     image.addEventListener('click', function() {
       toggleActive(this);
+      handleImageClick(this); // Actualiza para pasar el botón, no el valor del dataset
     });
   });
 
@@ -289,6 +302,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     clickedImage.classList.add('active');
+  }
+
+  function handleImageClick(clickedImage) {
+    const value = clickedImage.getAttribute('data-value'); // Obtener el valor del data-value del botón
+    localStorage.setItem('selectedSkinType', value);
   }
 
   function validateSelection() {
@@ -305,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
         nextPage.style.display = 'block'; // Mostrar página 6
         return true;
     }
-}
+  }
 
   const nextButton = document.getElementById('nextButton3');
   nextButton.addEventListener('click', function(event) {
@@ -545,6 +563,7 @@ document.addEventListener("DOMContentLoaded", function () {
   options2.forEach((option) => {
     option.addEventListener('click', function() {
       toggleActiveAge(this);
+      saveSelectedValue(this.value); // Almacena el valor del botón seleccionado
     });
   });
 
@@ -554,6 +573,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     clickedOption.classList.add('active');
+  }
+
+  function saveSelectedValue(value) {
+    localStorage.setItem('skinAgeValue', value); // Guarda el valor en localStorage
   }
 
   function validateSelectionThree() {
@@ -570,8 +593,7 @@ document.addEventListener("DOMContentLoaded", function () {
         nextPage.style.display = 'block'; 
         return true;
     }
-  
-}
+  }
 
   const nextButton0 = document.querySelector('#nextButton4');
   nextButton0.addEventListener('click', function(event) {
@@ -580,6 +602,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
 
 
 // Solo un seleccionable3
@@ -602,6 +625,7 @@ document.addEventListener("DOMContentLoaded", function () {
   options3.forEach((option1) => {
     option1.addEventListener('click', function() {
       toggleActive3(this);
+      saveSelectedValue(this.value); // Almacena el valor del botón seleccionado
     });
   });
 
@@ -611,6 +635,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     clickedOption.classList.add('active');
+  }
+
+  function saveSelectedValue(value) {
+    localStorage.setItem('solarDamageValue', value); // Guarda el valor en localStorage
   }
 
   function validateSelectionThree() {
@@ -627,8 +655,7 @@ document.addEventListener("DOMContentLoaded", function () {
         nextPage3.style.display = 'block'; 
         return true;
     }
-  
-}
+  }
 
   const nextButton5 = document.querySelector('#nextButton5');
   nextButton5.addEventListener('click', function(event) {
@@ -637,6 +664,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
 
 
 // Multiple chpize
@@ -651,18 +679,26 @@ function closeCustomAlert3() {
   customAlert3.style.display = 'none';
 }
 
-var selectedCount = 0;
+var selectedValues = []; // Array para almacenar los valores seleccionados
 
 function toggleActive4(element) {
     element.classList.toggle('selected');
     element.classList.toggle('active');
-    selectedCount = document.querySelectorAll('.option.selected').length;
+    updateSelectedValues(); // Actualizar los valores seleccionados
+}
+
+function updateSelectedValues() {
+    const selectedButtons = document.querySelectorAll('.option.selected');
+    selectedValues = Array.from(selectedButtons).map(button => button.value); // Obtener valores seleccionados y almacenarlos en el array
 }
 
 function checkSelection() {
-    if (selectedCount === 0) {
+    if (selectedValues.length === 0) {
         showCustomAlert3(); 
     } else {
+        // Guardar los valores seleccionados en localStorage
+        localStorage.setItem('selectedImproves', JSON.stringify(selectedValues));
+
         const currentSection = document.querySelector('.page-18');
         const nextSection = document.querySelector('.page-19');
 
@@ -670,6 +706,7 @@ function checkSelection() {
         nextSection.style.display = 'block'; 
     }
 }
+
 
 function showCustomAlert4() {
   var customAlert4 = document.getElementById('customAlert3');
@@ -682,19 +719,26 @@ function closeCustomAlert4() {
   customAlert4.style.display = 'none';
 }
 
-
-var selectedCount2 = 0;
+var selectedValues2 = []; // Array para almacenar los valores seleccionados
 
 function toggleActive5(element) {
     element.classList.toggle('selected');
     element.classList.toggle('active');
-    selectedCount2 = document.querySelectorAll('.option0.selected').length;
+    updateSelectedValues2(); // Actualizar los valores seleccionados
+}
+
+function updateSelectedValues2() {
+    const selectedButtons = document.querySelectorAll('.option0.selected');
+    selectedValues2 = Array.from(selectedButtons).map(button => button.value); // Obtener valores seleccionados y almacenarlos en el array
 }
 
 function checkSelection2() {
-    if (selectedCount2 === 0) {
+    if (selectedValues2.length === 0) {
         showCustomAlert4(); 
     } else {
+        // Guardar los valores seleccionados en localStorage
+        localStorage.setItem('selectedOthers', JSON.stringify(selectedValues2));
+
         const currentSection2 = document.querySelector('.page-19');
         const nextSection2 = document.querySelector('.page-20');
 
@@ -702,6 +746,7 @@ function checkSelection2() {
         nextSection2.style.display = 'block'; 
     }
 }
+
 
 
 
@@ -716,32 +761,41 @@ function closeCustomAlert5() {
   customAlert5.style.display = 'none';
 }
 
-var selectedCount3 = 0;
+var selectedValues3 = []; // Array para almacenar los valores seleccionados
 
 function toggleActive6(element) {
     element.classList.toggle('selected');
     element.classList.toggle('active');
-    selectedCount3 = document.querySelectorAll('.option1.selected').length;
+    updateSelectedValues3(); // Actualizar los valores seleccionados
 }
 
-function checkSelection3() {
-  if (selectedCount3 === 0) {
-      showCustomAlert5(); // Mostrar alerta si no hay opciones seleccionadas
-  } else {
-      const currentSection3 = document.querySelector('.page-21');
-      const nextSection3 = document.querySelector('.page-22');
-
-      currentSection3.style.display = 'none'; // Oculta la sección actual
-      nextSection3.style.display = 'block'; // Muestra la siguiente sección
-
-      // Verificar si la próxima sección es la página 22 y cambiar el color del fondo
-      if (nextSection3.classList.contains('page-22')) {
-          document.body.style.backgroundColor = 'white';
-      } else {
-          document.body.style.backgroundColor = ''; // Restaurar el color de fondo predeterminado si no es la página 22
-      }
-  }
+function updateSelectedValues3() {
+    const selectedButtons = document.querySelectorAll('.option1.selected');
+    selectedValues3 = Array.from(selectedButtons).map(button => button.value); // Obtener valores seleccionados y almacenarlos en el array
 }
+
+// function checkSelection3() {
+//     if (selectedValues3.length === 0) {
+//         showCustomAlert5(); // Mostrar alerta si no hay opciones seleccionadas
+//     } else {
+//         // Guardar los valores seleccionados en localStorage
+//         localStorage.setItem('selectedFindUs', JSON.stringify(selectedValues3));
+
+//         const currentSection3 = document.querySelector('.page-21');
+//         const nextSection3 = document.querySelector('.page-22');
+
+//         currentSection3.style.display = 'none'; // Oculta la sección actual
+//         nextSection3.style.display = 'block'; // Muestra la siguiente sección
+
+//         // Verificar si la próxima sección es la página 22 y cambiar el color del fondo
+//         if (nextSection3.classList.contains('page-22')) {
+//             document.body.style.backgroundColor = 'white';
+//         } else {
+//             document.body.style.backgroundColor = ''; // Restaurar el color de fondo predeterminado si no es la página 22
+//         }
+//     }
+// }
+
 
 
 
@@ -769,26 +823,215 @@ function checkSelection3() {
       // Obtén el valor del input
       const emailInput = document.getElementById("email");
       const emailValue = emailInput.value.trim();
-
+  
       // Verifica si el valor es un correo electrónico válido
       const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
-
+  
       if (!isValidEmail) {
-
         emailInput.classList.add("error-border");
-
         event.preventDefault();
         return;
       }
-
+  
       // Si es un correo electrónico válido, elimina el estilo de borde rojo
       emailInput.classList.remove("error-border");
-
+  
+      // Almacena el correo electrónico válido en el localStorage
+      localStorage.setItem('userEmail', emailValue);
+  
       const currentSection3 = document.querySelector('.page-20');
       const nextSection3 = document.querySelector('.page-21');
-
+  
       currentSection3.style.display = 'none'; // Oculta la sección actual
       nextSection3.style.display = 'block'; // Muestra la siguiente sección
-
     });
   });
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function checkSelection3() {
+    if (selectedValues3.length === 0) {
+        showCustomAlert5(); // Mostrar alerta si no hay opciones seleccionadas
+    } else {
+        // Guardar los valores seleccionados en localStorage
+        localStorage.setItem('selectedFindUs', JSON.stringify(selectedValues3));
+
+        const currentSection3 = document.querySelector('.page-21');
+        const nextSection3 = document.querySelector('.page-22');
+
+        currentSection3.style.display = 'none'; // Oculta la sección actual
+
+        // Verificar si la próxima sección es la página 22 y cambiar el color del fondo
+        if (nextSection3.classList.contains('page-22')) {
+            document.body.style.backgroundColor = 'white';
+            nextSection3.style.display = 'block'; // Mostrar la siguiente sección
+
+            // Llamar a la función para configurar los resultados del tipo de piel
+            setSkinTypeResults();
+        } else {
+            document.body.style.backgroundColor = ''; // Restaurar el color de fondo predeterminado si no es la página 22
+        }
+    }
+}
+
+
+function setSkinTypeResults() {
+  const selectedSkinType = localStorage.getItem('selectedSkinType');
+  const skinAgeValue = localStorage.getItem('skinAgeValue');
+
+  console.log(selectedSkinType, skinAgeValue);
+
+  const container1 = document.querySelector('.container1 .front1');
+  const h2 = document.getElementById('h2');
+  const p = document.getElementById('span');
+  const arrowLink = document.querySelector('.arrow-link');
+
+  if (selectedSkinType && skinAgeValue) {
+      let result = '';
+      let link = '#';
+        // Logica para determinar el resultado basado en las combinaciones
+        if (selectedSkinType === '1' && skinAgeValue === 'A') {
+            result = 'PIEL MIXTA';
+            link = 'https://boxsr.co/pages/piel-mixta';
+            container1.style.backgroundImage = 'url(images/results/piel-mixta.PNG)';
+            h2.textContent = result;
+            p.innerHTML = 'Tienes una piel mixta, que <strong>brilla en la zona T (frente, nariz, barbilla)</strong> y está <strong>seca en las mejillas</strong>, con brillos, <strong>exceso de grasa y puntos negros.</strong>';
+            arrowLink.href = link;
+          } else if (selectedSkinType === '1' && skinAgeValue === 'B') {
+          result = 'PIEL MIXTA';
+          link = 'https://boxsr.co/pages/piel-mixta';
+
+          container1.style.backgroundImage = 'url(images/results/piel-mixta.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes una piel mixta, que <strong>brilla en la zona T (frente, nariz, barbilla)</strong> y está <strong>seca en las mejillas</strong>, con brillos, <strong>exceso de grasa y puntos negros.</strong>';
+          arrowLink.href = link;
+        } else if (selectedSkinType === '1' && skinAgeValue === 'C') {
+          result = 'PIEL MIXTA - MADURA';
+          link = 'https://boxsr.co/pages/piel-mixta-madura';
+
+          container1.style.backgroundImage = 'url(images/results/piel-mixta.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes una piel mixta, que <strong>brilla en la zona T (frente, nariz, barbilla)</strong> y está <strong>seca en las mejillas</strong>, con brillos, <strong>exceso de grasa y puntos negros.</strong>';
+          arrowLink.href = link;
+        } else if (selectedSkinType === '2' && skinAgeValue === 'A') {
+          result = 'PIEL GRASA';
+          link = 'https://boxsr.co/pages/piel-grasa';
+
+          container1.style.backgroundImage = 'url(images/results/piel-grasa.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes la piel grasa, que brilla con facilidad. Es <strong>más gruesa</strong> y, por tanto, <strong>segrega más sebo</strong>.';
+          arrowLink.href = link;
+        } else if (selectedSkinType === '2' && skinAgeValue === 'B') {
+          result = 'PIEL GRASA';
+          link = 'https://boxsr.co/pages/piel-grasa';
+
+          container1.style.backgroundImage = 'url(images/results/piel-grasa.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes la piel grasa, que brilla con facilidad. Es <strong>más gruesa</strong> y, por tanto, <strong>segrega más sebo</strong>.';
+          arrowLink.href = link;
+        } else if (selectedSkinType === '2' && skinAgeValue === 'C') {
+          result = 'PIEL GRASA - Madura';
+          link = 'https://boxsr.co/pages/piel-grasa-madura';
+
+          container1.style.backgroundImage = 'url(images/results/piel-grasa.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes la piel grasa, que brilla con facilidad. Es <strong>más gruesa</strong> y, por tanto, <strong>segrega más sebo</strong>.';
+          arrowLink.href = link;
+        } else if (selectedSkinType === '3' && skinAgeValue === 'A') {
+          result = 'PIEL SECA';
+          link = 'https://boxsr.co/pages/piel-seca';
+
+          container1.style.backgroundImage = 'url(images/results/piel-seca.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes una piel que <strong>tiende a ser seca y que se vuelve tirante con facilidad.</strong> Es más fina y, por tanto, segrega <strong>menos sebo</strong>. Buenas noticias: ¡tienes poros más finos!';
+          arrowLink.href = link;
+        
+        } else if (selectedSkinType === '3' && skinAgeValue === 'B') {
+          result = 'PIEL SECA';
+          link = 'https://boxsr.co/pages/piel-seca';
+
+          container1.style.backgroundImage = 'url(images/results/piel-seca.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes una piel que <strong>tiende a ser seca y que se vuelve tirante con facilidad.</strong> Es más fina y, por tanto, segrega <strong>menos sebo</strong>. Buenas noticias: ¡tienes poros más finos!';
+          arrowLink.href = link;
+        } else if (selectedSkinType === '3' && skinAgeValue === 'C') {
+          result = 'PIEL SECA - Madura';
+          link = 'https://boxsr.co/pages/piel-seca-madura';
+
+          container1.style.backgroundImage = 'url(images/results/piel-seca.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes una piel que <strong>tiende a ser seca y que se vuelve tirante con facilidad.</strong> Es más fina y, por tanto, segrega <strong>menos sebo</strong>. Buenas noticias: ¡tienes poros más finos!';
+          arrowLink.href = link;
+        } else if (selectedSkinType === '4' && skinAgeValue === 'A') {
+          result = 'PIEL REACTIVA';
+          link = 'https://boxsr.co/pages/piel-sensible';
+
+          container1.style.backgroundImage = 'url(images/results/piel-reactiva.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes un tipo de piel sensible. Tu piel es hiperreactiva si experimenta sensaciones de <strong>irritación, cosquilleo, calor, hormigueo y enrojecimiento, </strong>ante estímulos que la piel normal no reacciona. Esto es debido a <strong>alteraciones en la barrera protectora </strong>por una sobreproducción de radicales libres que favorecen la deshidratación y la penetración de agentes potencialmente irritantes.';
+          arrowLink.href = link;
+        } else if (selectedSkinType === '4' && skinAgeValue === 'B') {
+          result = 'PIEL REACTIVA';
+          link = 'https://boxsr.co/pages/piel-sensible';
+
+          container1.style.backgroundImage = 'url(images/results/piel-reactiva.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes un tipo de piel sensible. Tu piel es hiperreactiva si experimenta sensaciones de <strong>irritación, cosquilleo, calor, hormigueo y enrojecimiento, </strong>ante estímulos que la piel normal no reacciona. Esto es debido a <strong>alteraciones en la barrera protectora </strong>por una sobreproducción de radicales libres que favorecen la deshidratación y la penetración de agentes potencialmente irritantes.';
+          arrowLink.href = link;
+        } else if (selectedSkinType === '4' && skinAgeValue === 'C') {
+          result = 'PIEL REACTIVA';
+          link = 'https://boxsr.co/pages/piel-sensible';
+
+          container1.style.backgroundImage = 'url(images/results/piel-reactiva.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes un tipo de piel sensible. Tu piel es hiperreactiva si experimenta sensaciones de <strong>irritación, cosquilleo, calor, hormigueo y enrojecimiento, </strong>ante estímulos que la piel normal no reacciona. Esto es debido a <strong>alteraciones en la barrera protectora </strong>por una sobreproducción de radicales libres que favorecen la deshidratación y la penetración de agentes potencialmente irritantes.';
+          arrowLink.href = link;
+        
+        } else if (selectedSkinType === '5' && skinAgeValue === 'A') {
+          result = 'PIEL NORMAL';
+          link = 'https://boxsr.co/pages/piel-normal';
+
+          container1.style.backgroundImage = 'url(images/results/piel-normal.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes un tipo de piel normal, equilibrada, que no se enrojece, no la sientes tirante ni con brillos. Buenas noticias: <strong>¡tú toleras bien las agresiones externas!</strong>';
+          arrowLink.href = link;
+        
+        } else if (selectedSkinType === '5' && skinAgeValue === 'B') {
+          result = 'PIEL NORMAL';
+          link = 'https://boxsr.co/pages/piel-normal';
+
+          container1.style.backgroundImage = 'url(images/results/piel-normal.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes un tipo de piel normal, equilibrada, que no se enrojece, no la sientes tirante ni con brillos. Buenas noticias: <strong>¡tú toleras bien las agresiones externas!</strong>';
+          arrowLink.href = link;
+        
+        } else if (selectedSkinType === '5' && skinAgeValue === 'C') {
+          result = 'PIEL NORMAL';
+          link = 'https://boxsr.co/pages/piel-normal';
+
+          container1.style.backgroundImage = 'url(images/results/piel-normal.PNG)';
+          h2.textContent = result;
+          p.innerHTML = 'Tienes un tipo de piel normal, equilibrada, que no se enrojece, no la sientes tirante ni con brillos. Buenas noticias: <strong>¡tú toleras bien las agresiones externas!</strong>';
+          arrowLink.href = link;
+        } else {
+            // Configurar el valor predeterminado si no coincide con ninguna combinación
+            result = 'ERROR';
+            link = '#';
+            container1.style.backgroundImage = ''; // Quitar la imagen de fondo o establecer una por defecto
+            h2.textContent = result;
+            p.textContent = 'Texto predeterminado';
+            arrowLink.href = link;
+        }
+    }
+}

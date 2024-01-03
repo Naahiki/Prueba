@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/styles/header.css">
     <link rel="stylesheet" href="assets/styles/common.css">
     <link rel="stylesheet" href="assets/styles/cam.css">
-    <link rel="stylesheet" href="assets/styles/media.css">
+    <link rel="stylesheet" href="assets/styles/results.css">
     <link rel="stylesheet" href="assets/styles/medias2.css">
     <!-- <link rel="stylesheet" href="assets/styles/medias3.css"> -->
 
@@ -23,6 +23,7 @@
 
     <script src="assets/script.js"></script>
     <script src="assets/cam.js"></script>
+    <script src="assets/data.js"></script>
 
 
 
@@ -391,25 +392,25 @@
                         <div class="skin-types-images">
                             <div class="skin-types-images-top-row">
                                 <div class="skin-types-image-container">
-                                    <img src="../../images/pages/iconos test de piel-01 1.svg" alt="Imagen 1" class="svg-image">
+                                    <input type="button" class="svg-image" id="botonimagen0" data-value="1 ">
                                     <p class="image-text"><strong>I have an oily T-zone </strong>(forehead, nose, chin)</p>
                                 </div>
                                 <div class="skin-types-image-container">
-                                    <img src="../../images/pages/iconos test de piel-01 2.svg" alt="Imagen 2" class="svg-image" >
+                                    <input type="button"  class="svg-image" id="botonimagen1" data-value="2">
                                     <p class="image-text"><strong>My whole face feels oily</strong></p>
                                 </div>
                                 <div class="skin-types-image-container" >
-                                    <img src="../../images/pages/iconos test de piel-01 3.svg" alt="Imagen 3" class="svg-image" >
+                                    <input type="button" class="svg-image"  id="botonimagen2" data-value="3">
                                     <p class="image-text"><strong>My face feels dry and flaky</strong></p>
                                 </div>
                             </div>
                             <div class="skin-types-images-bottom-row">
                                 <div class="skin-types-image-container">
-                                    <img src="../../images/pages/iconos test de piel-01 4.svg" alt="Imagen 4" class="svg-image" >
+                                    <input type="button"  class="svg-image" id="botonimagen3" data-value="4">
                                     <p class="image-text"><strong>My skin gets irritated easily </strong>(with reddened areas)</p>
                                 </div>
                                 <div class="skin-types-image-container" >
-                                    <img src="../../images/pages/iconos test de piel-01 5.svg" alt="Imagen 5" class="svg-image" >
+                                    <input type="button"  class="svg-image" id="botonimagen4" data-value="5">
                                     <p class="image-text"><strong>My skin feels neutral</strong> (not oily or dry)</p>
                                 </div>
                             </div>
@@ -605,9 +606,9 @@
                             <h2 class="question" style="width: 290px;"><strong>Have you noticed more visible wrinkles or expression lines lately?</strong></h2>
                         </div>
                         <div class="skyn-age-select"> 
-                            <button class="option-button" value="Very few or hardly any">Very few or hardly any</button>
-                            <button class="option-button" value="Yes! Expression lines only">Yes! Expression lines only</button>
-                            <button class="option-button" value="Yes, and quite deep">Yes, and quite deep</button>
+                            <button class="option-button" value="A">Very few or hardly any</button>
+                            <button class="option-button" value="B">Yes! Expression lines only</button>
+                            <button class="option-button" value="C">Yes, and quite deep</button>
                         </div>
                         
                     </div>
@@ -890,20 +891,21 @@
                         </div>
                         <div class="options-select">
                             <div class="column0">
-                                <button class="option"  onclick="toggleActive4(this)">Solar damage</button>
-                                <button class="option" onclick="toggleActive4(this)">Wrinkles</button>
-                                <button class="option" onclick="toggleActive4(this)">Blemishes</button>
-                                <button class="option" onclick="toggleActive4(this)">Dark circles</button>
-                                <button class="option" onclick="toggleActive4(this)">Dryness</button>
+                                <button class="option" value="Solar damage" onclick="toggleActive4(this)">Solar damage</button>
+                                <button class="option" value="Wrinkles" onclick="toggleActive4(this)">Wrinkles</button>
+                                <button class="option" value="Blemishes" onclick="toggleActive4(this)">Blemishes</button>
+                                <button class="option" value="Dark circles" onclick="toggleActive4(this)">Dark circles</button>
+                                <button class="option" value="Dryness" onclick="toggleActive4(this)">Dryness</button>
                             </div>
                             <div class="column1">
-                                <button class="option"  onclick="toggleActive4(this)">Oiliness</button>
-                                <button class="option" onclick="toggleActive4(this)">Premature ageing</button>
-                                <button class="option" onclick="toggleActive4(this)">Redness</button>
-                                <button class="option" onclick="toggleActive4(this)">Breakouts</button>
-                                <button class="option" onclick="toggleActive4(this)">Flaking</button>
+                                <button class="option" value="Oiliness" onclick="toggleActive4(this)">Oiliness</button>
+                                <button class="option" value="Premature ageing" onclick="toggleActive4(this)">Premature ageing</button>
+                                <button class="option" value="Redness" onclick="toggleActive4(this)">Redness</button>
+                                <button class="option" value="Breakouts" onclick="toggleActive4(this)">Breakouts</button>
+                                <button class="option" value="Flaking" onclick="toggleActive4(this)">Flaking</button>
                             </div>
                         </div>
+                        
                         
                     </div>    
                         <div class="iconos-last-next " >
@@ -941,16 +943,18 @@
                         </div>
                         <div class="options-select">
                             <div class="column0">
-                                <button class="option0"  onclick="toggleActive5(this)">Acne and body cysts</button>
-                                <button class="option0" onclick="toggleActive5(this)">Hair loss</button>
-                                <button class="option0" onclick="toggleActive5(this)">Lack of energy</button>
-                                <button class="option0" onclick="toggleActive5(this)">Body hair removal</button>
-                                <button class="option0" onclick="toggleActive5(this)">Testosterone</button>
+                                <button class="option0" value="Acne and body cysts" onclick="toggleActive5(this)">Acne and body cysts</button>
+                                <button class="option0" value="Hair loss" onclick="toggleActive5(this)">Hair loss</button>
+                                <button class="option0" value="Lack of energy" onclick="toggleActive5(this)">Lack of energy</button>
+                                <button class="option0" value="Body hair removal" onclick="toggleActive5(this)">Body hair removal</button>
+                                <button class="option0" value="Testosterone" onclick="toggleActive5(this)">Testosterone</button>
                             </div>
                             <div class="column1">
-                                <button class="option0" onclick="toggleActive5(this)">Other</button>
-                                <textarea style="border: 1px solid rgba(87, 60, 65, 1);" type="other-text" id="text" name="input-text" placeholder="Tell us more about your concerns ..."></textarea>                            </div>
+                                <button class="option0" value="Other" onclick="toggleActive5(this)">Other</button>
+                                <textarea style="border: 1px solid rgba(87, 60, 65, 1);" type="other-text" id="text" name="input-text" placeholder="Tell us more about your concerns ..."></textarea>
+                            </div>
                         </div>
+                        
                         
                         
                     </div>
@@ -1021,22 +1025,23 @@
                                 <p class="small-lettering-mobile">This will not affect your recommendations.</p>    
          
                         </div>
-                    <div class="options-select">
-                        <div class="column0">
-                            <button class="option1" onclick="toggleActive6(this)">Internet search</button>
-                            <button class="option1" onclick="toggleActive6(this)">Recommendation</button>
-                            <button class="option1" onclick="toggleActive6(this)">Facebook</button>
-                            <button class="option1" onclick="toggleActive6(this)">Instagram</button>
-                            <button class="option1" onclick="toggleActive6(this)">Tiktok</button>
+                        <div class="options-select">
+                            <div class="column0">
+                                <button class="option1" value="Internet search" onclick="toggleActive6(this)">Internet search</button>
+                                <button class="option1" value="Recommendation" onclick="toggleActive6(this)">Recommendation</button>
+                                <button class="option1" value="Facebook" onclick="toggleActive6(this)">Facebook</button>
+                                <button class="option1" value="Instagram" onclick="toggleActive6(this)">Instagram</button>
+                                <button class="option1" value="Tiktok" onclick="toggleActive6(this)">Tiktok</button>
+                            </div>
+                            <div class="column1">
+                                <button class="option1" value="YouTube" onclick="toggleActive6(this)">YouTube</button>
+                                <button class="option1" value="Influencer" onclick="toggleActive6(this)">Influencer</button>
+                                <button class="option1" value="Press or blog" onclick="toggleActive6(this)">Press or blog</button>
+                                <button class="option1" value="Amazon" onclick="toggleActive6(this)">Amazon</button>
+                                <button class="option1" value="Other" onclick="toggleActive6(this)">Other</button>
+                            </div>
                         </div>
-                        <div class="column1">
-                            <button class="option1" onclick="toggleActive6(this)">YouTube</button>
-                            <button class="option1" onclick="toggleActive6(this)">Influencer</button>
-                            <button class="option1" onclick="toggleActive6(this)">Press or blog</button>
-                            <button class="option1" onclick="toggleActive6(this)">Amazon</button>
-                            <button class="option1" onclick="toggleActive6(this)">Other</button>
-                        </div>
-                    </div>
+                        
                     
                     
                 </div>
@@ -1311,6 +1316,36 @@
                     </svg> 
                 </div>
             </div>
+            <div class="skin-type-results">
+                <div class="cols">
+                    <div class="col">
+                        <div class="container1">
+                            <div class="front1">
+                                <div class="inner">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front">
+                                <div class="inner">
+                                    <p>TU TIPOLOGÍA ES:</p>
+                                    <h2 id="h2"> </h2>
+                                    <span id="span"></span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner1">
+                                    <a href="#"  class="arrow-link">See more<span class="arrow"></span></a>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
 
 
