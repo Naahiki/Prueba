@@ -896,6 +896,8 @@ function setSkinTypeResults() {
   const h2 = document.getElementById('h2');
   const p = document.getElementById('span');
   const arrowLink = document.querySelector('.arrow-link');
+  const imageLink = document.querySelector('.photo-link');
+
 
   if (selectedSkinType && skinAgeValue) {
       let result = '';
@@ -908,6 +910,8 @@ function setSkinTypeResults() {
             h2.textContent = result;
             p.innerHTML = 'Tienes una piel mixta, que <strong>brilla en la zona T (frente, nariz, barbilla)</strong> y está <strong>seca en las mejillas</strong>, con brillos, <strong>exceso de grasa y puntos negros.</strong>';
             arrowLink.href = link;
+            imageLink.href = link;
+
           } else if (selectedSkinType === '1' && skinAgeValue === 'B') {
           result = 'PIEL MIXTA';
           link = 'https://boxsr.co/pages/piel-mixta';
@@ -916,6 +920,8 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes una piel mixta, que <strong>brilla en la zona T (frente, nariz, barbilla)</strong> y está <strong>seca en las mejillas</strong>, con brillos, <strong>exceso de grasa y puntos negros.</strong>';
           arrowLink.href = link;
+          imageLink.href = link;
+
         } else if (selectedSkinType === '1' && skinAgeValue === 'C') {
           result = 'PIEL MIXTA - MADURA';
           link = 'https://boxsr.co/pages/piel-mixta-madura';
@@ -924,6 +930,8 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes una piel mixta, que <strong>brilla en la zona T (frente, nariz, barbilla)</strong> y está <strong>seca en las mejillas</strong>, con brillos, <strong>exceso de grasa y puntos negros.</strong>';
           arrowLink.href = link;
+          imageLink.href = link;
+
         } else if (selectedSkinType === '2' && skinAgeValue === 'A') {
           result = 'PIEL GRASA';
           link = 'https://boxsr.co/pages/piel-grasa';
@@ -932,6 +940,8 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes la piel grasa, que brilla con facilidad. Es <strong>más gruesa</strong> y, por tanto, <strong>segrega más sebo</strong>.';
           arrowLink.href = link;
+          imageLink.href = link;
+
         } else if (selectedSkinType === '2' && skinAgeValue === 'B') {
           result = 'PIEL GRASA';
           link = 'https://boxsr.co/pages/piel-grasa';
@@ -940,6 +950,8 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes la piel grasa, que brilla con facilidad. Es <strong>más gruesa</strong> y, por tanto, <strong>segrega más sebo</strong>.';
           arrowLink.href = link;
+          imageLink.href = link;
+
         } else if (selectedSkinType === '2' && skinAgeValue === 'C') {
           result = 'PIEL GRASA - Madura';
           link = 'https://boxsr.co/pages/piel-grasa-madura';
@@ -948,6 +960,8 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes la piel grasa, que brilla con facilidad. Es <strong>más gruesa</strong> y, por tanto, <strong>segrega más sebo</strong>.';
           arrowLink.href = link;
+          imageLink.href = link;
+
         } else if (selectedSkinType === '3' && skinAgeValue === 'A') {
           result = 'PIEL SECA';
           link = 'https://boxsr.co/pages/piel-seca';
@@ -956,6 +970,8 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes una piel que <strong>tiende a ser seca y que se vuelve tirante con facilidad.</strong> Es más fina y, por tanto, segrega <strong>menos sebo</strong>. Buenas noticias: ¡tienes poros más finos!';
           arrowLink.href = link;
+          imageLink.href = link;
+
         
         } else if (selectedSkinType === '3' && skinAgeValue === 'B') {
           result = 'PIEL SECA';
@@ -965,6 +981,8 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes una piel que <strong>tiende a ser seca y que se vuelve tirante con facilidad.</strong> Es más fina y, por tanto, segrega <strong>menos sebo</strong>. Buenas noticias: ¡tienes poros más finos!';
           arrowLink.href = link;
+          imageLink.href = link;
+
         } else if (selectedSkinType === '3' && skinAgeValue === 'C') {
           result = 'PIEL SECA - Madura';
           link = 'https://boxsr.co/pages/piel-seca-madura';
@@ -973,6 +991,8 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes una piel que <strong>tiende a ser seca y que se vuelve tirante con facilidad.</strong> Es más fina y, por tanto, segrega <strong>menos sebo</strong>. Buenas noticias: ¡tienes poros más finos!';
           arrowLink.href = link;
+          imageLink.href = link;
+
         } else if (selectedSkinType === '4' && skinAgeValue === 'A') {
           result = 'PIEL REACTIVA';
           link = 'https://boxsr.co/pages/piel-sensible';
@@ -981,6 +1001,8 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes un tipo de piel sensible. Tu piel es hiperreactiva si experimenta sensaciones de <strong>irritación, cosquilleo, calor, hormigueo y enrojecimiento, </strong>ante estímulos que la piel normal no reacciona. Esto es debido a <strong>alteraciones en la barrera protectora </strong>por una sobreproducción de radicales libres que favorecen la deshidratación y la penetración de agentes potencialmente irritantes.';
           arrowLink.href = link;
+          imageLink.href = link;
+
         } else if (selectedSkinType === '4' && skinAgeValue === 'B') {
           result = 'PIEL REACTIVA';
           link = 'https://boxsr.co/pages/piel-sensible';
@@ -989,6 +1011,8 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes un tipo de piel sensible. Tu piel es hiperreactiva si experimenta sensaciones de <strong>irritación, cosquilleo, calor, hormigueo y enrojecimiento, </strong>ante estímulos que la piel normal no reacciona. Esto es debido a <strong>alteraciones en la barrera protectora </strong>por una sobreproducción de radicales libres que favorecen la deshidratación y la penetración de agentes potencialmente irritantes.';
           arrowLink.href = link;
+          imageLink.href = link;
+
         } else if (selectedSkinType === '4' && skinAgeValue === 'C') {
           result = 'PIEL REACTIVA';
           link = 'https://boxsr.co/pages/piel-sensible';
@@ -997,6 +1021,8 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes un tipo de piel sensible. Tu piel es hiperreactiva si experimenta sensaciones de <strong>irritación, cosquilleo, calor, hormigueo y enrojecimiento, </strong>ante estímulos que la piel normal no reacciona. Esto es debido a <strong>alteraciones en la barrera protectora </strong>por una sobreproducción de radicales libres que favorecen la deshidratación y la penetración de agentes potencialmente irritantes.';
           arrowLink.href = link;
+          imageLink.href = link;
+
         
         } else if (selectedSkinType === '5' && skinAgeValue === 'A') {
           result = 'PIEL NORMAL';
@@ -1006,6 +1032,8 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes un tipo de piel normal, equilibrada, que no se enrojece, no la sientes tirante ni con brillos. Buenas noticias: <strong>¡tú toleras bien las agresiones externas!</strong>';
           arrowLink.href = link;
+          imageLink.href = link;
+
         
         } else if (selectedSkinType === '5' && skinAgeValue === 'B') {
           result = 'PIEL NORMAL';
@@ -1015,6 +1043,8 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes un tipo de piel normal, equilibrada, que no se enrojece, no la sientes tirante ni con brillos. Buenas noticias: <strong>¡tú toleras bien las agresiones externas!</strong>';
           arrowLink.href = link;
+          imageLink.href = link;
+
         
         } else if (selectedSkinType === '5' && skinAgeValue === 'C') {
           result = 'PIEL NORMAL';
@@ -1024,14 +1054,18 @@ function setSkinTypeResults() {
           h2.textContent = result;
           p.innerHTML = 'Tienes un tipo de piel normal, equilibrada, que no se enrojece, no la sientes tirante ni con brillos. Buenas noticias: <strong>¡tú toleras bien las agresiones externas!</strong>';
           arrowLink.href = link;
+          imageLink.href = link;
+
         } else {
             // Configurar el valor predeterminado si no coincide con ninguna combinación
             result = 'ERROR';
             link = '#';
-            container1.style.backgroundImage = ''; // Quitar la imagen de fondo o establecer una por defecto
+            container1.style.backgroundImage = 'url(images/results/piel-normal.PNG)'; // Quitar la imagen de fondo o establecer una por defecto
             h2.textContent = result;
             p.textContent = 'Texto predeterminado';
             arrowLink.href = link;
+            imageLink.href = link;
+
         }
     }
 }

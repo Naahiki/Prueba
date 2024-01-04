@@ -73,7 +73,7 @@
   background-color: #dbf22e;
   border:1px solid #dbf22e;
   color: black;
-}   
+}
 
 
 /* Variables-comunes */
@@ -145,7 +145,21 @@ h2.question strong {
 }
 
 #transition-name-input-text {
-  margin-top: 50px;
+  margin-top: 120px;
+}
+
+#greeting{
+  display: none;
+  text-align: center;
+  width: 270px;
+  position:absolute
+}
+
+#greeting0{
+  display: none;
+  width: 350px;
+  height: 120px;
+  text-align: center;
 }
 
 .transition-input-text label {
@@ -170,6 +184,7 @@ h2.question strong {
 
 }
 
+
 .checkbox {
   display: flex;
   align-items: center;
@@ -184,7 +199,8 @@ h2.question strong {
   margin-top: -30px;
   appearance: none;
   bottom:390px;
-  left: 580px; 
+  left: 580px;
+  margin: 0px 10px 40px;
 }
 
 
@@ -199,10 +215,10 @@ h2.question strong {
 
 .checkbox input[type="checkbox"]:checked::before {
   content: "\2022";
-  font-size: 50px;
+  font-size: 52px;
   text-align: center;
-  margin-top: 1.5px;
-  margin-right: 1.5px; 
+  margin-top: 2px;
+  margin-left: 1px;
 
 }
 
@@ -210,32 +226,42 @@ h2.question strong {
   box-shadow: 1px -6px 37px 54px  rgba(217, 217, 217, 1) inset;
 }
 
-
 .checkbox.error-border2 input[type="checkbox"]:checked::before {
   content: "\2022";
-  font-size: 50px;
+  font-size: 48px;
   text-align: center;
   margin-left: -2px;
-  margin-top: 0px; 
+  margin-top: -2px;
 }
 
 
 
-.checkbox label {
-  font-family: 'Sofia Sans', sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 23px;
-  letter-spacing: 0em;
-  text-align: left;
-  cursor: pointer;
-  color: #555;
-  margin-left: 10px; 
-}
 
 .checkbox.error-border2 input[type="checkbox"] {
   border: 4px solid #FF8153 !important;
 }
+
+
+
+
+
+.milabel {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #573c41; 
+  padding-top: 3px; 
+  cursor: pointer;
+  width: 90%;
+  display: inline-block; 
+  vertical-align: top;
+  }
+
+
+
 
 
 .iconos-last-next {
@@ -243,7 +269,7 @@ h2.question strong {
   bottom: 20px;
   width: 100%;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   margin-left: -30px;
 }
 
@@ -257,7 +283,7 @@ h2.question strong {
   margin: 25px;
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 }
 
 .iconos-last-next .next-page {
@@ -354,7 +380,7 @@ h2.question strong {
   display: flex;
   flex-direction: row;
   align-items: center;
-  top: 30px; 
+  top: 30px;
 
 }
 
@@ -372,7 +398,7 @@ h2.question strong {
   padding: 5px;
   background-color:#D9D9D9;
   color: white;
-  font-family:'Sofia Sans', sans-serif ; 
+  font-family:'Sofia Sans', sans-serif ;
 }
 
 .common-three-column-part > .skyn-type p,
@@ -381,7 +407,7 @@ h2.question strong {
   margin: 0;
   font-family:'Sofia Sans', sans-serif ;
   font-weight: 700;
-  font-size: 14px; 
+  font-size: 14px;
 }
 
 .scanner-text-input-part {
@@ -407,7 +433,7 @@ h2.question strong {
   width: 352px;
   height: 570px;
   /* margin-left: 33px; */
-  margin-bottom: 60px;  
+  margin-bottom: 60px;
 }
 
 .skin-scanner-right-column{
@@ -497,16 +523,16 @@ height: 90%;
   letter-spacing: 0em;
   text-align: left;
 }
-   
-   
+
+
 .emoji1 img {
   position: absolute;
   width: 200px;
   margin-left: 200px;
   z-index: 2;
   margin-top: -60px;
- }   
-   
+ }
+
  .emoji1 p{
   position: absolute;
   z-index: 2;
@@ -538,7 +564,7 @@ height: 90%;
   letter-spacing: 0em;
   text-align: left;
   width: 100%;
- }   
+ }
 
 
 .step {
@@ -642,7 +668,7 @@ margin-right: 120px;
   background-color: transparent;
   background-position:center;
   text-decoration: none;
-  
+
 }
 
 
@@ -822,7 +848,7 @@ p.image-text{
 .skyn-age-select button:hover, .skyn-age-select button.active{
   background-color: #47D36F;
   color:black;
-}  
+}
 
 
   /* Filtro scanner-2*/
@@ -941,7 +967,7 @@ left: 0px; /* Posición inicial fuera del escáner */
     display: flex;
     flex-direction: row;
     margin-right: -20px;
-  }  
+  }
 
 
 .options-select button {
@@ -1272,13 +1298,13 @@ margin-top:100px;
   display: flex;
 }
 .done-pages-big-icon{
- 
+
     box-sizing: border-box;
     flex: 0 0 auto;
     width: 82.07%;
     padding-right: 3rem;
     padding-left: 13.5rem;
- 
+
 }
 
 
@@ -1288,23 +1314,23 @@ margin-top:100px;
     display: block;
     max-width: initial;
 
- 
+
 }
 
 .done-common-wrapper-content-question{
-  
+
     box-sizing: border-box;
     flex: 0 0 auto;
     width: 17.93%;
     padding-top: 0.25rem;
     padding-bottom: 13.5rem;
     padding-left: 10rem;
- 
+
 
 }
 
 .question-done {
-  
+
     box-sizing: border-box;
     max-width: 13.0625rem;
     padding: 0;
@@ -1317,7 +1343,7 @@ margin-top:100px;
     color: black;
     text-align: left;
     white-space: pre-wrap;
- 
+
 
 }
 

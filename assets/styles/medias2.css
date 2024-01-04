@@ -76,13 +76,14 @@
 #greeting{
   position: absolute;
   bottom: 45%;
-  left: 40px;
+  width: 85%;
 }
 
 #greeting0{
   position: absolute;
-  bottom: 40%;
-  left: 40px;
+  bottom: 45%;
+  width: 85%;
+
 }
 
 .transition-text-input-part{
