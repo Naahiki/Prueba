@@ -136,8 +136,8 @@ function showGreeting() {
   namePlaceholder.textContent = name;
   greeting.style.display = "block";
 
-  // Almacenar el nombre en localStorage si todo está bien
-  localStorage.setItem('userName', name);
+// Agregar el nombre al objeto userData
+  addToUserData('userName', name);
 
   setTimeout(() => {
     document.getElementById('greeting').style.display = 'none';
@@ -196,8 +196,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     birthdayInput.classList.remove("error-border");
 
-    // Almacenar la fecha de cumpleaños en localStorage si es válida
-    localStorage.setItem('userBirthday', birthdayValue);
+    // Agregar el nombre al objeto userData
+    addToUserData('userBirthday', birthdayValue);
 
     showNextPage(3);
   });
@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function() {
       countryInput.classList.remove("error-border");
 
       // Almacenar la selección del país en localStorage
-      localStorage.setItem('userCountry', countryValue);
+      addToUserData('userCountry', countryValue);
 
       const formContent = document.getElementById("transition-form-content0");
       formContent.style.display = "none";
@@ -306,7 +306,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleImageClick(clickedImage) {
     const value = clickedImage.getAttribute('data-value'); // Obtener el valor del data-value del botón
-    localStorage.setItem('selectedSkinType', value);
+    addToUserData('selectedSkinType', value);
   }
 
   function validateSelection() {
@@ -576,7 +576,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function saveSelectedValue(value) {
-    localStorage.setItem('skinAgeValue', value); // Guarda el valor en localStorage
+    addToUserData('skinAgeValue', value); // Guarda el valor en localStorage
   }
 
   function validateSelectionThree() {
@@ -638,7 +638,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function saveSelectedValue(value) {
-    localStorage.setItem('solarDamageValue', value); // Guarda el valor en localStorage
+    addToUserData('solarDamageValue', value); // Guarda el valor en localStorage
   }
 
   function validateSelectionThree() {
@@ -697,7 +697,7 @@ function checkSelection() {
         showCustomAlert3(); 
     } else {
         // Guardar los valores seleccionados en localStorage
-        localStorage.setItem('selectedImproves', JSON.stringify(selectedValues));
+        addToUserData('selectedImproves', JSON.stringify(selectedValues));
 
         const currentSection = document.querySelector('.page-18');
         const nextSection = document.querySelector('.page-19');
@@ -737,7 +737,7 @@ function checkSelection2() {
         showCustomAlert4(); 
     } else {
         // Guardar los valores seleccionados en localStorage
-        localStorage.setItem('selectedOthers', JSON.stringify(selectedValues2));
+        addToUserData('selectedOthers', JSON.stringify(selectedValues2));
 
         const currentSection2 = document.querySelector('.page-19');
         const nextSection2 = document.querySelector('.page-20');
@@ -837,7 +837,7 @@ function updateSelectedValues3() {
       emailInput.classList.remove("error-border");
   
       // Almacena el correo electrónico válido en el localStorage
-      localStorage.setItem('userEmail', emailValue);
+      addToUserData('userEmail', emailValue);
   
       const currentSection3 = document.querySelector('.page-20');
       const nextSection3 = document.querySelector('.page-21');
@@ -865,7 +865,7 @@ function updateSelectedValues3() {
         showCustomAlert5(); // Mostrar alerta si no hay opciones seleccionadas
     } else {
         // Guardar los valores seleccionados en localStorage
-        localStorage.setItem('selectedFindUs', JSON.stringify(selectedValues3));
+        addToUserData('selectedFindUs', JSON.stringify(selectedValues3));
 
         const currentSection3 = document.querySelector('.page-21');
         const nextSection3 = document.querySelector('.page-22');
@@ -887,8 +887,9 @@ function updateSelectedValues3() {
 
 
 function setSkinTypeResults() {
-  const selectedSkinType = localStorage.getItem('selectedSkinType');
-  const skinAgeValue = localStorage.getItem('skinAgeValue');
+  const selectedSkinType = userData['selectedSkinType'];
+  const skinAgeValue = userData['skinAgeValue'];
+  
 
   console.log(selectedSkinType, skinAgeValue);
 
