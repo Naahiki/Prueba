@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
     capturedImageContainer3.innerHTML = `<img src="${capturedImage}" alt="Captured Image">`;
 
     localStorage.setItem('capturedImage', capturedImage);
-    addToUserData('capturedImage', capturedImage);
+    addToUserImage('capturedImage', capturedImage);
 
     const nextPage = document.querySelector('.page-6');
     nextPage.style.display = 'block';
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const capturedImage1 = canvas.toDataURL('image/jpeg', 1.0);
     localStorage.setItem('capturedImage1', capturedImage1);
-    addToUserData('capturedImage1', capturedImage1);
+    addToUserImage('capturedImage1', capturedImage1);
 
     const capturedImageContainer = document.getElementById('cameraContainer4');
     capturedImageContainer.innerHTML = `<img src="${capturedImage1}" alt="Captured Image">`;
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const capturedImage3 = canvas.toDataURL('image/jpeg', 1.0);
     localStorage.setItem('capturedImage3', capturedImage3);
-    addToUserData('capturedImage3', capturedImage3);
+    addToUserImage('capturedImage3', capturedImage3);
 
     const capturedImageElement = document.getElementById('capturedImage3');
     capturedImageElement.src = capturedImage3;
