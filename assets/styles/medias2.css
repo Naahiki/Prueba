@@ -902,9 +902,23 @@ margin-right: 2px;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       }
       
-      .results-body-right-side {
-        display: none;
+      .results-body-right-side{
+        margin-left: 0px;
+        margin-bottom: 10%;
+      }
+
+      
+      .progress-bar{
+        width: 20rem;
+      }
+      .progress-container{
+        margin-top: 0px;
+      }
+
+      .buttons-results-image{
+        margin-top:-15%;
       }
 }

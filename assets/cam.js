@@ -320,26 +320,38 @@ document.addEventListener('DOMContentLoaded', function () {
 // });
 
 
+// document.addEventListener('DOMContentLoaded', function () {
+//   const currentPage = document.querySelector('.page-22');
+
+//   if (currentPage) {
+//     const capturedImage = localStorage.getItem('capturedImage');
+
+//     if (capturedImage) {
+//       const capturedImageContainer = document.getElementById('cameraContainerResults');
+//       const img = new Image();
+
+//       img.onload = function() {
+//         capturedImageContainer.appendChild(img);
+//       };
+
+//       img.src = capturedImage;
+//     }
+//   }
+// });
+
 document.addEventListener('DOMContentLoaded', function () {
   const currentPage = document.querySelector('.page-22');
 
   if (currentPage) {
-    const capturedImage = localStorage.getItem('capturedImage');
     const capturedImageContainer = document.getElementById('cameraContainerResults');
+    const img = new Image();
 
-    if (capturedImage && capturedImageContainer) {
-      const img = new Image();
-
+    if (userImages.length > 0) {
       img.onload = function() {
-        capturedImageContainer.innerHTML = ''; // Limpiar el contenedor antes de añadir la imagen
         capturedImageContainer.appendChild(img);
       };
-
-      img.onerror = function() {
-        console.error('Error al cargar la imagen');
-      };
-
-      img.src = capturedImage;
+      
+      img.src = userImages[0]; // Acceder a la primera imagen del array userImages
     }
   }
 });

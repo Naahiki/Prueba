@@ -341,12 +341,13 @@
   
   
   .barra-texto {
-    color: black;
-    font-size: 16px;
+    position: absolute;
+    left: calc(100% + 5px); /* Ajusta la posición a la derecha de la barra */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; /* Ancho suficiente para mostrar el número */
     text-align: center;
-    position:relative;
-    top:2px;
-    left:6px;
+    line-height: 20px;
   }
   
   .yellow {
@@ -370,7 +371,11 @@
     padding: 20px;
     border: 2px solid #D9D9D9;
     border-radius: 41px;
+    justify-content: space-evenly;
+    height: 200px;
+    margin-top: 5%;
 }
+
   .media {
     background: linear-gradient(270deg, #2EC3F2 -2.83%, rgba(92, 205, 82, 0.791667) 19.84%, #FFCC4D 50.44%, rgba(247, 140, 42, 0.510204) 77.64%, rgba(234, 31, 31, 0.69) 105.97%);
     margin-left: 6%;
