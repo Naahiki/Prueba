@@ -1070,3 +1070,74 @@ function setSkinTypeResults() {
         }
     }
 }
+
+
+
+// Progress-bar RESULTS
+
+function ajustarBarra(barraId, puntuacion) {
+  const barra = document.getElementById(barraId);
+  const textoBarra = barra.querySelector('.barra-texto');
+  const ancho = (puntuacion / 10) * 100; // Escala del 1 al 10
+
+  barra.style.width = ancho + '%';
+  textoBarra.textContent = puntuacion; // Mostrar la puntuación en la barra
+  barra.classList.add('fill');
+}
+
+
+function obtenerMedia(puntuacion1, puntuacion2, puntuacion3) {
+  return (puntuacion1 + puntuacion2 + puntuacion3) / 3;
+}
+
+function actualizarBarraMedia(puntuacionMedia) {
+  const barraMedia = document.getElementById('barraMedia');
+  const textoBarraMedia = barraMedia.querySelector('.barra-texto');
+  const ancho = (puntuacionMedia / 10) * 100; // Escala del 1 al 10
+
+  barraMedia.style.width = ancho + '%';
+  textoBarraMedia.textContent = puntuacionMedia.toFixed(1); // Mostrar la puntuación media en la barra
+  barraMedia.classList.add('fill');
+}
+
+function ajustarBolita(bolita, puntuacion) {
+  const anchoBarra = bolita.parentElement.offsetWidth - bolita.offsetWidth;
+  const distanciaMovimiento = (puntuacion / 10) * anchoBarra;
+
+  bolita.style.transform = `translateX(${distanciaMovimiento}px)`;
+
+  const barraTexto = bolita.querySelector('.barra-texto');
+  if (barraTexto) {
+    barraTexto.textContent = puntuacion.toFixed(2); // Actualiza el número dentro de la bolita
+  } else {
+    console.error('No se encontró .barra-texto dentro de .bolita');
+  }
+}
+
+
+function obtenerPuntuacionDelModelo() {
+  return Math.floor(Math.random() * 10) + 1;
+}
+
+function obtenerPuntuaciones() {
+  const puntuacion1 = obtenerPuntuacionDelModelo();
+  const puntuacion2 = obtenerPuntuacionDelModelo();
+  const puntuacion3 = obtenerPuntuacionDelModelo();
+
+  ajustarBolita(document.querySelector('#barra1 .bolita'), puntuacion1);
+  ajustarBolita(document.querySelector('#barra2 .bolita'), puntuacion2);
+  ajustarBolita(document.querySelector('#barra3 .bolita'), puntuacion3);
+
+  const puntuacionMedia = obtenerMedia(puntuacion1, puntuacion2, puntuacion3);
+  ajustarBolita(document.querySelector('#barraMedia .bolita'), puntuacionMedia);
+}
+
+function obtenerMedia(puntuacion1, puntuacion2, puntuacion3) {
+  return (puntuacion1 + puntuacion2 + puntuacion3) / 3;
+}
+
+function double(){
+  checkSelection3();
+  obtenerPuntuaciones();
+}
+

@@ -325,13 +325,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (currentPage) {
     const capturedImage = localStorage.getItem('capturedImage');
+    const capturedImageContainer = document.getElementById('cameraContainerResults');
 
-    if (capturedImage) {
-      const capturedImageContainer = document.getElementById('cameraContainerResults');
+    if (capturedImage && capturedImageContainer) {
       const img = new Image();
 
       img.onload = function() {
+        capturedImageContainer.innerHTML = ''; // Limpiar el contenedor antes de añadir la imagen
         capturedImageContainer.appendChild(img);
+      };
+
+      img.onerror = function() {
+        console.error('Error al cargar la imagen');
       };
 
       img.src = capturedImage;

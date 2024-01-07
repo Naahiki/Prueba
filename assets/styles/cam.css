@@ -127,7 +127,6 @@
 .captured-image-container {
     width: 352px;
     height: 570px;
-    overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -163,8 +162,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 352px;
-    height: 570px;
+
     pointer-events: none;
 }
 
