@@ -877,7 +877,7 @@ margin-right: 2px;
   font-size: 25px;
 }
 .col {
-  width: 100%;
+  width: 380px;
   margin: 0 0 2rem 0;
 }
     .front .inner p {
@@ -908,6 +908,7 @@ margin-right: 2px;
       .results-body-right-side{
         margin-left: 0px;
         margin-bottom: 10%;
+        margin-top:10%;
       }
 
       
@@ -920,5 +921,9 @@ margin-right: 2px;
 
       .buttons-results-image{
         margin-top:-15%;
+      }
+
+      .cuadrado{
+        padding: 30px;
       }
 }

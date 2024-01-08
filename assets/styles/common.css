@@ -1067,11 +1067,16 @@ left: 0px; /* Posición inicial fuera del escáner */
   margin-top: 100px;
 }
 
+.skin-type-results{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 
 .results-body-right-side {
     /* text-align: right; */
     margin-left: 5%;
-    margin-top: 5%;
     /* width: 80%; */
 }
 

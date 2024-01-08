@@ -347,7 +347,9 @@
     transform: translateY(-50%);
     width: 30px; /* Ancho suficiente para mostrar el número */
     text-align: center;
-    line-height: 20px;
+    line-height: 50px;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 24px;
   }
   
   .yellow {
@@ -368,17 +370,18 @@
   .cuadrado{
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 42px;
     border: 2px solid #D9D9D9;
     border-radius: 41px;
     justify-content: space-evenly;
-    height: 200px;
-    margin-top: 5%;
+    height: 350px;
+    margin-top: 10%;
 }
 
   .media {
     background: linear-gradient(270deg, #2EC3F2 -2.83%, rgba(92, 205, 82, 0.791667) 19.84%, #FFCC4D 50.44%, rgba(247, 140, 42, 0.510204) 77.64%, rgba(234, 31, 31, 0.69) 105.97%);
     margin-left: 6%;
+    margin-top: 4%;
   }
   
   .media::before {
@@ -389,4 +392,31 @@
     height: 100%;
     width: 100%;
     background-image: linear-gradient(to right, transparent 25%, white 25%, white 26%, transparent 26%, transparent 50%, white 50%, white 51%, transparent 51%, transparent 75%, white 75%, white 76%, transparent 76%);
+  }
+
+  .metricas{
+    width: 105%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:-60px;
+  }
+
+  .title-left , .title-right{
+    line-height: 20px;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 14px;
+    width: 5em;
+    
+  }
+
+  .metricas0{
+    margin-left: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -20px;
+    color:#A49C9CF5;
+
   }
